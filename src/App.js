@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Course from "./pages/course";
 import Courses from "./pages/courses";
 import LoginRegister from "./pages/login-register";
+import NotFound from "./pages/404";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
         <Route path={ROUTES.COURSES_ROUTE} element={<Courses />} />
         <Route path={ROUTES.COURSE_ROUTE} element={<Course />} />
         <Route path={ROUTES.LOGINREGISTER_ROUTE} element={<LoginRegister />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
