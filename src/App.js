@@ -7,16 +7,14 @@ import LoginRegister from "./pages/login-register";
 import NotFound from "./pages/404";
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={ROUTES.HOME_ROUTE} element={<Home />} />
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path={ROUTES.COURSES_ROUTE} element={<Courses />} />
-        <Route path={ROUTES.COURSE_ROUTE} element={<Course />} />
-        <Route path={ROUTES.LOGINREGISTER_ROUTE} element={<LoginRegister />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path={ROUTES.HOME_ROUTE} element={<Home />} />
+      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path={ROUTES.COURSES_ROUTE} element={<Courses />} />
+      <Route path={ROUTES.COURSE_ROUTE} element={<Course />} />
+      <Route path={ROUTES.LOGINREGISTER_ROUTE} element={<LoginRegister />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
