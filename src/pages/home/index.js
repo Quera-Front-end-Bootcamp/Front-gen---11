@@ -3,7 +3,7 @@ import Button from "../../components/UI/Button";
 const Home = () => {
   return (
     <div>
-      <Button text="مشاهده مقالات" color="main" />
+      <Button text="a" color="main" freeSize={true} />
     </div>
   );
 };

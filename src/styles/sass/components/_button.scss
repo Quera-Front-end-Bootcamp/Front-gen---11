@@ -2,4 +2,21 @@
   font-family: iransans;
   width: 13rem;
   height: 5rem;
+  border: none;
+  border-radius: $border-radius-primary * 1rem;
+  text-align: center;
+  cursor: pointer;
+  &__color__main {
+    color: $color_white;
+    background-color: $color_primary;
+  }
+  &__color__secondary {
+    color: $color_primary;
+    background-color: $color_white;
+  }
+  &__freesize {
+    width: auto;
+    height: auto;
+    padding: 0.8rem 1.6rem;
+  }
 }
