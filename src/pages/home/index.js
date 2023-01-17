@@ -1,10 +1,6 @@
 import React from "react";
 const Home = () => {
-  return (
-    <div>
-      <Button text="a" color="main" freeSize={true} />
-    </div>
-  );
+  return <div>Home</div>;
 };
 
 export default Home;
