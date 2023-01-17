@@ -1,0 +1,74 @@
+.header {
+  direction: rtl;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  padding-bottom: unset;
+  border-bottom: 2px solid rgba(209, 209, 209, 0.2);
+
+  &__title {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__login {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__loginBtn {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 18px;
+    &:nth-child(2) {
+      background: rgba(0, 68, 88, 0.6);
+    }
+  }
+
+  &__menu {
+    width: 25px;
+    display: none;
+    z-index: 10;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 15px;
+    &__links {
+      display: none;
+    }
+    &__menu {
+      display: unset;
+    }
+  }
+}
+
+.menu {
+  display: none;
+  @media screen and (max-width: 640px) {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #004458;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
