@@ -1,0 +1,28 @@
+// test
+.detail {
+  margin: 6rem;
+}
+
+.detail {
+  width: 40rem;
+  height: 40rem;
+  border: $color-gray solid 0.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  padding: 0 3.2rem;
+  gap: 3.2rem;
+  position: relative;
+  &__title {
+    font-family: iransans-bold;
+    color: $color-primary;
+  }
+  &__button {
+    position: absolute;
+    bottom: 0;
+    left: 3.2rem;
+    transform: translateY(50%);
+  }
+}

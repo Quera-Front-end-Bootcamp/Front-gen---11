@@ -5,7 +5,9 @@ const Detail = ({ title, text, buttonText }) => {
     <div className="detail">
       <h1 className="detail__title">{title}</h1>
       <p className="detail__text">{text}</p>
-      <Button text={buttonText} color="main" />
+      <div className="detail__button">
+        <Button text={buttonText} color="main" />
+      </div>
     </div>
   );
 };
