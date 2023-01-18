@@ -3,7 +3,7 @@ import "./header.scss";
 import { Link, useLocation } from "react-router-dom";
 import bar3 from "../../images/bars-3.svg";
 
-const MainHeader = () => {
+const Header = () => {
   const links = [
     { id: "1", name: "دوره ها", url: "/courses" },
     { id: "2", name: "مقالات", url: "/home" },
@@ -79,4 +79,4 @@ const MainHeader = () => {
   );
 };
 
-export default MainHeader;
+export default Header;
