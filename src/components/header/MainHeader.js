@@ -13,9 +13,27 @@ const Header = () => {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
 
+  window.addEventListener("resize", () => {
+    let width = window.innerWidth;
+    if (width > 640) {
+      setMenu(false);
+    }
+  });
+  window.addEventListener("load", () => {
+    let width = window.innerWidth;
+    if (width > 640) {
+      setMenu(false);
+    }
+  });
   useEffect(() => {
     setMenu(false);
   }, [location]);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (menu) body.style.overflow = "hidden";
+    else body.style.overflow = "";
+  }, [menu]);
 
   return (
     <>
