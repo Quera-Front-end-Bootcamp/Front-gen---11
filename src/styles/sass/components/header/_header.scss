@@ -1,28 +1,32 @@
 .header {
   direction: rtl;
-  padding: 15px 60px;
+  padding: 1.6rem 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   width: 100%;
-  padding-bottom: unset;
-  border-bottom: 2px solid rgba(209, 209, 209, 0.2);
+  padding-bottom: 0rem;
+  border-bottom: 0.2rem solid rgba(209, 209, 209, 0.2);
 
   &__title {
-    font-size: 20px;
-    color: #fff;
+    font-size: 2.4rem;
+    color: $color-white;
   }
 
   &__links {
-    display: flex;
-    gap: 20px;
-  }
-
-  &__link {
-    font-size: 18px;
-    text-decoration: none;
-    color: #fff;
+    &--link {
+      display: flex;
+      gap: 2.4rem;
+      list-style: none;
+      &-item {
+        &-link {
+          text-decoration: none;
+          color: $color-white;
+          font-size: 1.8rem;
+        }
+      }
+    }
   }
 
   &__login {
@@ -32,11 +36,11 @@
 
   &__loginBtn {
     text-decoration: none;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 18px;
+    color: $color-white;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.8rem;
     &:nth-child(2) {
-      background: rgba(0, 68, 88, 0.6);
+      background-color: rgba($color-primary, 0.6);
     }
   }
 

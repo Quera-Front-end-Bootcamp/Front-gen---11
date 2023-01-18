@@ -1,10 +1,10 @@
 import React from "react";
 import Hero from "../../components/home/hero-section/Hero";
-import MainHeader from "../../components/header/MainHeader";
+import Header from "../../components/UI/Header";
 const Home = () => {
   return (
     <>
-      <MainHeader />
+      <Header />
       <Hero />
     </>
   );
