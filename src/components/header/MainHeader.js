@@ -3,7 +3,7 @@ import "./header.scss";
 import { Link, useLocation } from "react-router-dom";
 import bar3 from "../../images/bars-3.svg";
 
-const Header = () => {
+const MainHeader = () => {
   const links = [
     { id: "1", name: "دوره ها", url: "/courses" },
     { id: "2", name: "مقالات", url: "/home" },
@@ -36,29 +36,26 @@ const Header = () => {
   }, [menu]);
 
   return (
-    <>
-      <header className="header">
-        <h1 className="header__title">بامبو</h1>
+    <header className="header">
+      <h1 className="header__title">بامبو</h1>
 
-        <div className="header__links">
-          {links.map((link) => (
-            <Link className="header__link" key={link.id} to={link.url}>
-              {link.name}
-            </Link>
-          ))}
-        </div>
+      <div className="header__links">
+        {links.map((link) => (
+          <Link className="header__link" key={link.id} to={link.url}>
+            {link.name}
+          </Link>
+        ))}
+      </div>
 
-        <div className="header__login">
-          <Link className="header__loginBtn">ورود</Link>
-          <Link className="header__loginBtn">ثبت نام</Link>
-          <img
-            onClick={() => setMenu(!menu)}
-            src={bar3}
-            className="header__menu"
-          />
-        </div>
-      </header>
-
+      <div className="header__login">
+        <Link className="header__loginBtn">ورود</Link>
+        <Link className="header__loginBtn">ثبت نام</Link>
+        <img
+          onClick={() => setMenu(!menu)}
+          src={bar3}
+          className="header__menu"
+        />
+      </div>
       {menu && (
         <div className="menu">
           <Link to="/home" className="header__link">
@@ -78,8 +75,8 @@ const Header = () => {
           </Link>
         </div>
       )}
-    </>
+    </header>
   );
 };
 
-export default Header;
+export default MainHeader;
