@@ -5,23 +5,25 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero__info">
-        <h1 className="hero__title">
+        <h1 className="hero__info__title">
           باید راه بهتری برای آموزش ساخته میشد ,<br />
           پس ما ساختیمش
         </h1>
-        <p className="hero__des">
+        <p className="hero__info__des">
           سایت بامبو با هدف تولید و انتشار محتوای باکیفیت آموزشی و همچنین آشنایی
           جامعه با فضای کسب و کار در فضای مجازی ایجاد شده و امید داریم بتوانیم
           با راهکار های نوین ، فرصتی . برای افراد خواهان پیشرفت فراهم کنیم
         </p>
-        <Button color="secondary">مشاهده دوره ها</Button>
-        <div className="hero__search">
+        <div className="hero__info__button">
+          <Button color="secondary">مشاهده دوره ها</Button>
+        </div>
+        <div className="hero__info__search">
           <img
-            className="hero__input__icon"
+            className="hero__info__search__icon"
             src={magnifying}
             alt="magnifying"
           />
-          <input className="hero__input" placeholder="جستوجو" />
+          <input className="hero__info__search__input" placeholder="جستوجو" />
         </div>
       </div>
     </section>
