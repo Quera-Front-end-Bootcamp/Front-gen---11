@@ -1,12 +1,7 @@
 import React from "react";
 import BlogSection from "../../components/home/blog-section";
 const Home = () => {
-  return(
-    <>
-    <div>Home</div>
-    <BlogSection />
-    </>
-  );
+  return <div>home</div>;
 };
 
 export default Home;
