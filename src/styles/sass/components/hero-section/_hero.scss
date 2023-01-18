@@ -5,7 +5,7 @@
       rgba(6, 121, 94, 0.7),
       rgba(6, 121, 94, 0.7)
     ),
-    url("../../../images/hero.png");
+    url("./../../../../images/hero.png");
 
   background-size: cover;
   background-position: center top;
@@ -62,7 +62,6 @@
     background: linear-gradient(0, rgba(0, 68, 88, 0.5), rgba(0, 68, 88, 0.5));
   }
 
-
   @media screen and (max-width: 640px) {
     padding-left: 15px;
     padding-right: 15px;
@@ -74,6 +73,5 @@
     &__title {
       font-size: 26px;
     }
-
   }
 }
