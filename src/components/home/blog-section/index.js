@@ -1,13 +1,12 @@
 import React from "react";
+import Dtail from "../../../components/UI/Detail"
 // -------------------------
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-// import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
-import "./style.scss";
+import "../../../styles/sass/components/blog-section.scss"
 
 import img1 from "../../../imgs/slider-imgs/home-slider-img-1.jpg";
 import img2 from "../../../imgs/slider-imgs/home-slider-img-2.jpg";
@@ -40,7 +39,15 @@ function BlogSection() {
       </Swiper>
       </div>
       <div className="info-part">
-        <div className="floating">
+        <Dtail 
+        title="اخبار و مقالات"
+        text="
+        دسترسی به جدید ترین و مفید ترین مقالات تالیف شده توسط معتبر ترین
+        روزنامه ها و رسانه ها ، در دسته بندی های گوناگونی همچون طراحی ، هنر
+        ... برنامه نویسی ، اقتصاد، فلسفه ، فیزیک ، شیمی و"
+        buttonText="مشاهده مقالات"
+        />
+        {/* <div className="floating">
           <h2>اخبار و مقالات</h2>
           <p>
             دسترسی به جدید ترین و مفید ترین مقالات تالیف شده توسط معتبر ترین
@@ -48,7 +55,7 @@ function BlogSection() {
             ... برنامه نویسی ، اقتصاد، فلسفه ، فیزیک ، شیمی و
           </p>
           <button>مشاهده مقالات</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
