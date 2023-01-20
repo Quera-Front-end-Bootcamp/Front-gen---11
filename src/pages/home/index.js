@@ -4,6 +4,7 @@ import Header from "../../components/UI/Header";
 import Course from "./../../components/home/course-section";
 import AdviseSection from "./../../components/home/advise-section";
 import BlogSection from "./../../components/home/blog-section";
+import Contact from "../../components/home/contact-section/Contact";
 const Home = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Home = () => {
         <Course />
         <AdviseSection />
         <BlogSection />
+        <Contact />
       </main>
     </>
   );
