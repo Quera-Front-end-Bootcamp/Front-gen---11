@@ -7,7 +7,7 @@ const CourseCart = ({ img, buttonText, color, alt, width, height }) => {
       style={{ width, height, backgroundColor: `${color}` }}
     >
       <img src={img} alt={alt} className="course-cart__image" />
-      <Button text={`دوره ${buttonText}`} color="secondary" />
+      <Button color="secondary">دوره {buttonText}</Button>
     </div>
   );
 };
