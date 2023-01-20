@@ -31,9 +31,9 @@ $color-inputText: #0cdbab;
   }
   &__form__header {
     white-space: nowrap;
+    color: $color-white;
   }
-  button {
-    font-size: 2rem;
+  &__button {
     align-self: flex-end;
   }
   .contact__form__input {
