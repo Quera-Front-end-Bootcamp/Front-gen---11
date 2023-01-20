@@ -1,6 +1,7 @@
 import React from "react";
+import AdviseSection from "../../components/home/advise-section";
 const Home = () => {
-  return <div>home</div>;
+  return <AdviseSection />;
 };
 
 export default Home;
