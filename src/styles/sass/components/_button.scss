@@ -28,5 +28,10 @@
   }
   &__opacity__secondary {
     background-color: rgba($color_white, 0.6);
+  &__size__noraml {
+    font-size: 1.6rem;
+  }
+  &__size__large {
+    font-size: 2rem;
   }
 }
