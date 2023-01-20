@@ -1,0 +1,70 @@
+$color-focusInput: #0cdbab;
+$border-radius: 2px;
+$color-background: #088568;
+$color-inputBackground: #00775b;
+$color-inputText: #0cdbab;
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-background;
+  height: 100vh;
+  direction: rtl;
+  &__img {
+    object-fit: cover;
+    width: 50%;
+    clip-path: polygon(31% 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+  &__form {
+    padding: 1rem;
+    width: 50%;
+  }
+
+  &__form__container {
+    gap: 1rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 80%;
+  }
+  &__form__header {
+    white-space: nowrap;
+  }
+  button {
+    font-size: 2rem;
+    align-self: flex-end;
+  }
+  .contact__form__input {
+    font-size: 2rem;
+    background-color: $color-inputBackground;
+    color: $color-inputText;
+    border: none;
+    outline: none;
+    border-radius: $border-radius;
+    padding: 2rem;
+
+    &:focus {
+      border-bottom: 1px solid $color-focusInput;
+    }
+
+    &::placeholder {
+      color: $color-inputText;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+
+    &__img {
+      height: 50vh;
+      width: 100%;
+      clip-path: polygon(0 0, 100% 0%, 100% 37%, 0% 100%);
+    }
+    &__form {
+      height: 50vh;
+      width: 100%;
+    }
+  }
+}
