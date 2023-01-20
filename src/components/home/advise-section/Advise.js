@@ -1,4 +1,3 @@
-import "../../../styles/sass/components/advise-section/_main.scss";
 const Advise = ({ title, description, src, alt, children }) => {
   return (
     <div className="advise-container">
