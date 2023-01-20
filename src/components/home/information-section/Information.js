@@ -1,5 +1,4 @@
 import React from "react";
-import "./information.scss";
 import student from "../../../images/student.svg";
 import teacher from "../../../images/teacher.svg";
 import course from "../../../images/course.svg";

@@ -10,75 +10,72 @@
   background-size: cover;
   background-position: center top;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 
   &__info {
-    display: grid;
-    // justify-content: flex-end;
-    // flex-direction: column;
-    // gap: 2.4rem;
-    align-content: end;
-    align-items: end;
+    padding: 1.6rem 6rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
     gap: 2.4rem;
-    grid-template-columns: 1fr repeat(2, 1fr);
-    grid-template-rows: repeat(3, max-content);
-    height: 100vh;
+    height: calc(100vh - 4.8rem);
 
     &__title {
       font-size: 3.2rem;
       color: $color-white;
-      grid-column: 1 / span 2;
-      grid-row: 1/2;
-      margin: 0 6.4rem;
+    }
+
+    &__about {
+      display: flex;
+      gap: 2rem;
     }
     &__des {
-      grid-column: 1/2;
-      grid-row: 2/3;
       color: $color-white;
       font-size: 1.8rem;
-      margin: 0 6.4rem;
+      width: 40%;
     }
-    &__button {
-      grid-column: 2 / 3;
-      grid-row: 2/3;
+
+    // @media screen and (max-width: 640px) {
+    //   padding-left: 1.5rem;
+    //   padding-right: 1.5rem;
+    //   &__about {
+    //     flex-direction: column;
+    //   }
+    //   &__des {
+    //     width: 100%;
+    //     font-size: 1rem;
+    //   }
+
+    //   &__title {
+    //     font-size: 2rem;
+    //   }
+    // }
+  }
+
+  &__search {
+    display: flex;
+    &__icon {
+      width: 4rem;
+      padding-right: 1.6rem;
+      background: linear-gradient(
+        0,
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      );
     }
-    &__search {
-      display: flex;
-      grid-row: 3/-1;
-      grid-column: 1/-1;
-      &__icon {
-        width: 4rem;
-        padding-right: 1.6rem;
-        background: linear-gradient(
-          0,
-          rgba($color-primary, 0.5),
-          rgba($color-primary, 0.5)
-        );
-      }
-      &__input {
-        background: linear-gradient(
-          0,
-          rgba($color-primary, 0.5),
-          rgba($color-primary, 0.5)
-        );
-        border: none;
-        outline: none;
-        padding: 1.6rem;
-        color: $color-white;
-        width: 100%;
-      }
+    &__input {
+      background: linear-gradient(
+        0,
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      );
+      border: none;
+      outline: none;
+      padding: 1.6rem;
+      color: $color-white;
+      width: 100%;
     }
   }
 }
-
-// @media screen and (max-width: 640px) {
-//   padding-left: 15px;
-//   padding-right: 15px;
-//   &__des {
-//     width: 100%;
-//     font-size: 16px;
-//   }
-
-//   &__title {
-//     font-size: 26px;
-//   }
-// }
