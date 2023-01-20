@@ -6,28 +6,46 @@ import Advise from "./Advise.js";
 import Button from "../../UI/Button";
 
 const AdviseSection = () => {
+  const adviceData = [
+    {
+      id: 0,
+      title: "مشاوره آنلاین",
+      description: "مشاوران ما برای حل مشکلات شما آماده‌اند...",
+      src: consultation,
+      alt: "consultation",
+      hasButton: true,
+      ButtonText: "مشاوره",
+    },
+    {
+      id: 1,
+      title: "ارائه مدرک معتبر",
+      description: "بهترین راه برای ساختن رزومه حرفه‌ای...",
+      src: student,
+      alt: "consultation",
+    },
+    {
+      id: 2,
+      title: "همکاری در آموزش",
+      description: "به اساتید آموزشی ما در بامبو بپیوندید...",
+      src: collaboration,
+      alt: "consultation",
+    },
+  ];
   return (
     <div className="ad">
-      <Advise
-        title="مشاوره آنلاین"
-        description="مشاوران ما برای حل مشکلات شما آماده‌اند..."
-        src={consultation}
-        alt="consultation"
-      >
-        <Button color="gray" text="مشاوره" />
-      </Advise>
-      <Advise
-        title="ارائه مدرک معتبر"
-        description="بهترین راه برای ساختن رزومه حرفه‌ای..."
-        src={student}
-        alt="consultation"
-      />
-      <Advise
-        title="همکاری در آموزش"
-        description="به اساتید آموزشی ما در بامبو بپیوندید..."
-        src={collaboration}
-        alt="consultation"
-      />
+      {adviceData.map((advice) => (
+        <Advise
+          title={advice.title}
+          description={advice.description}
+          src={advice.src}
+          alt={advice.alt}
+          key={advice.id}
+        >
+          {advice.hasButton && (
+            <Button color="secondary">{advice.ButtonText}</Button>
+          )}
+        </Advise>
+      ))}
     </div>
   );
 };
