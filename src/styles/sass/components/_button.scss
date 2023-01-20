@@ -19,4 +19,10 @@
     height: auto;
     padding: 0.8rem 1.6rem;
   }
+  &__opacity__main {
+    background-color: rgba($color_primary, 0.6);
+  }
+  &__opacity__secondary {
+    background-color: rgba($color_white, 0.6);
+  }
 }

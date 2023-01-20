@@ -24,9 +24,9 @@ const Header = () => {
       </nav>
 
       <div className="header__login">
-        <Link className="header__loginBtn">ورود</Link>
-        <Button color="main" freeSize="true">
-          <Link className="header__loginBtn">ثبت نام</Link>
+        <Link className="header__login-btn">ورود</Link>
+        <Button color="main" freeSize={true} opacity={true}>
+          <Link className="header__login-btn">ثبت نام</Link>
         </Button>
       </div>
     </header>

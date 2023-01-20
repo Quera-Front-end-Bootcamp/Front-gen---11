@@ -34,14 +34,11 @@
     gap: 1.6rem;
   }
 
-  &__loginBtn {
+  &__login-btn {
     text-decoration: none;
     color: $color-white;
     padding: 0.8rem 1.6rem;
     font-size: 1.8rem;
-    &:nth-child(2) {
-      background-color: rgba($color-primary, 0.6);
-    }
   }
 
   &__menu {
