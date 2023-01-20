@@ -1,7 +1,6 @@
 import React from "react";
-import Course from "../../components/home/course-section";
 const Home = () => {
-  return <Course />;
+  return <p>Home</p>;
 };
 
 export default Home;
