@@ -3,7 +3,7 @@ $border-radius: 2px;
 $color-background: #088568;
 $color-inputBackground: #00775b;
 $color-inputText: #0cdbab;
-
+$size-h2: 3rem;
 .contact {
   display: flex;
   justify-content: space-between;
@@ -30,6 +30,7 @@ $color-inputText: #0cdbab;
     width: 80%;
   }
   &__form__header {
+    font-size: $size-h2;
     white-space: nowrap;
     color: $color-white;
   }
@@ -53,8 +54,7 @@ $color-inputText: #0cdbab;
       color: $color-inputText;
     }
   }
-
-  @media screen and (max-width: 640px) {
+  @include respnse(md) {
     flex-direction: column;
 
     &__img {
