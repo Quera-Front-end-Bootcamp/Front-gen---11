@@ -1,3 +1,4 @@
+@import "../../abstract/mixins";
 .ad {
   display: grid;
 }
@@ -10,16 +11,37 @@
   align-items: center;
   background-color: $color-primary;
   &__header {
-    padding: 6rem;
+    padding: 0 6rem;
+    @include respnse(lg) {
+      padding: 0 3rem 0 0;
+    }
   }
   &__heading {
     color: white;
     margin-bottom: 1rem;
     font-size: 4rem;
+    @include respnse(lg) {
+      font-size: 3.2rem;
+    }
+    @include respnse(md) {
+      font-size: 2.4rem;
+    }
+    @include respnse(sm) {
+      font-size: 1.6rem;
+    }
   }
   &__description {
     font-size: 2.4rem;
     color: rgb(220, 213, 213);
+    @include respnse(lg) {
+      font-size: 2.4rem;
+    }
+    @include respnse(md) {
+      font-size: 2rem;
+    }
+    @include respnse(sm) {
+      font-size: 1.3rem;
+    }
   }
   &__image-container {
     height: 33.3vh;
@@ -37,6 +59,12 @@
       .btn {
         position: absolute;
         right: 50%;
+        @include respnse(md) {
+          right: 30%;
+          width: auto;
+          height: auto;
+          padding: 0.8rem 1.6rem;
+        }
         top: 50%;
         transform: translatey(-50%);
         z-index: 1;

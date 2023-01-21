@@ -8,13 +8,13 @@ import Contact from "../../components/home/contact-section/Contact";
 const Home = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
-        <Hero />
-        <Course />
+        {/* <Hero /> */}
+        {/* <Course /> */}
         <AdviseSection />
-        <BlogSection />
-        <Contact />
+        {/* <BlogSection /> */}
+        {/* <Contact /> */}
       </main>
     </>
   );
