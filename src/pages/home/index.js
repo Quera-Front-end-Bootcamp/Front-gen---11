@@ -6,18 +6,7 @@ import AdviseSection from "./../../components/home/advise-section";
 import BlogSection from "./../../components/home/blog-section";
 import Contact from "../../components/home/contact-section/Contact";
 const Home = () => {
-  return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Course />
-        <AdviseSection />
-        <BlogSection />
-        <Contact />
-      </main>
-    </>
-  );
+  return <Contact />;
 };
 
 export default Home;
