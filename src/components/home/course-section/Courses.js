@@ -12,8 +12,6 @@ const Courses = () => {
       color: "#F7DF1E",
       buttonText: "جاوا اسکریپت",
       alt: "javascript-logo",
-      width: "40rem",
-      height: "40rem",
     },
     {
       id: 1,
@@ -21,8 +19,6 @@ const Courses = () => {
       color: "#CAB2EF",
       buttonText: "بوت استرپ",
       alt: "bootstrap-logo",
-      width: "35rem",
-      height: "40rem",
     },
     {
       id: 2,
@@ -30,8 +26,6 @@ const Courses = () => {
       color: "#FFC7F8",
       buttonText: "جاوا",
       alt: "java-logo",
-      width: "37rem",
-      height: "28rem",
     },
     {
       id: 3,
@@ -39,8 +33,6 @@ const Courses = () => {
       color: "#6A1577",
       buttonText: "سی شارپ",
       alt: "csharp-logo",
-      width: "37rem",
-      height: "40rem",
     },
   ];
   return (
