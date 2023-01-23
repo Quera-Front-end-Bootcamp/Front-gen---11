@@ -1,0 +1,91 @@
+$paragraph-color:#dbdbdb;
+$title-color:#ffffff;
+
+section{
+    background-color: #004458;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.FooterSection__top {
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    width: 80%;
+    padding: 30px;
+    border-bottom: 3px solid white;
+    &__right__title{
+        color: $title-color;
+        font-size: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    &__right__paragraph{
+        color: $paragraph-color;
+        font-size: 2rem;
+    }
+
+    &__left__form__title{
+        color: $title-color;
+        font-size: 3rem;
+        padding-bottom: 3rem;
+    }
+    &__left__form__input{
+        height: 5rem;
+        padding-right: 1rem;
+    }
+
+    
+}
+
+.FooterSection__mid{
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    width: 80%;
+    padding: 30px;
+    &__right__title{
+        color: $title-color;
+        font-size: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    &__right__firstEmail{
+        color: $paragraph-color;
+        font-size: 2rem;
+    }
+
+    &__right__secondEmail{
+        color: $paragraph-color;
+        font-size: 2rem;
+    }
+
+    &__center__title{
+        color: $title-color;
+        font-size: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    &__center{
+        &__firstlink , &__secondlink , &__thirdlink {
+            font-size: 2rem;
+            color: $paragraph-color;
+        }
+    }
+
+
+}
+
+.FooterSection__bottom {
+    background-color: #003544;
+    width: 100%;
+    text-align: center;
+    &__text{
+        color:$paragraph-color;
+        font-size: 2rem;
+        padding: 3rem;
+        span {
+            color: greenyellow;
+        }
+    }
+}

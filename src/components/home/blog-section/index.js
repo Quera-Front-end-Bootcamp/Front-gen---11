@@ -1,26 +1,26 @@
 import React from "react";
 import Dtail from "../../../components/UI/Detail";
 // -------------------------
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-import img1 from "../../../imgs/slider-imgs/home-slider-img-1.jpg";
-import img2 from "../../../imgs/slider-imgs/home-slider-img-2.jpg";
-import img3 from "../../../imgs/slider-imgs/home-slider-img-3.jpg";
+// import img1 from "../../../imgs/slider-imgs/home-slider-img-1.jpg";
+// import img2 from "../../../imgs/slider-imgs/home-slider-img-2.jpg";
+// import img3 from "../../../imgs/slider-imgs/home-slider-img-3.jpg";
 
 // --------------------------
 function BlogSection() {
-  const slider_imgs = [
-    { img: img1, text: "مقایسه ریکت با فریم ورک های جدید جاوااسکریپت" },
-    { img: img2, text: "میشود React جایگزین svelte آیا" },
-    { img: img3, text: "مواردی که درباره فرانت نمیدانیم" },
-  ];
+  // const slider_imgs = [
+  //   { img: img1, text: "مقایسه ریکت با فریم ورک های جدید جاوااسکریپت" },
+  //   { img: img2, text: "میشود React جایگزین svelte آیا" },
+  //   { img: img3, text: "مواردی که درباره فرانت نمیدانیم" },
+  // ];
   return (
     <div className="blog-section">
-      <div className="slider">
+      {/* <div className="slider">
         <Swiper
           cssMode={true}
           navigation={true}
@@ -36,7 +36,7 @@ function BlogSection() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
       <div className="info-part">
         <Dtail
           title="اخبار و مقالات"

@@ -5,6 +5,7 @@ import Course from "./../../components/home/course-section";
 import AdviseSection from "./../../components/home/advise-section";
 import BlogSection from "./../../components/home/blog-section";
 import Contact from "../../components/home/contact-section/Contact";
+import FooterSection from "../../components/home/Footer-section";
 const Home = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const Home = () => {
         <AdviseSection />
         <BlogSection />
         <Contact />
+        <FooterSection />
       </main>
     </>
   );
