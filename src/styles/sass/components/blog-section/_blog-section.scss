@@ -1,11 +1,14 @@
 .blog-section {
   width: 100%;
   height: 80rem;
-  // max-width: 1600px;
-  // max-height: 80rem;
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;
+  @include response(lg) {
+    & {
+      height: 60rem;
+    }
+  }
   @include response(md) {
     & {
       flex-direction: column;
@@ -14,7 +17,6 @@
   }
   @at-root {
     .blog-section__info{
-      // background-color: red;
       width: 40%;
       display: flex;
       justify-content: flex-end;
@@ -26,7 +28,6 @@
       }
     }
     .blog-section__slider {
-      // background-color: gray;
       height: 100%;
       padding: 10rem;
       width: 60%;

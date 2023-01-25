@@ -25,30 +25,3 @@
     }
   }
 }
-// @mixin responseMax($size) {
-//   @if $size==sm {
-//     @media only screen and (max-width: 40em) {
-//       @content;
-//     }
-//   }
-//   @if $size==md {
-//     @media only screen and (max-width: 48em) {
-//       @content;
-//     }
-//   }
-//   @if $size==lg {
-//     @media only screen and (max-width: 64em) {
-//       @content;
-//     }
-//   }
-//   @if $size==xl {
-//     @media only screen and (max-width: 80em) {
-//       @content;
-//     }
-//   }
-//   @if $size==xxl {
-//     @media only screen and (max-width: 96em) {
-//       @content;
-//     }
-//   }
-// }
