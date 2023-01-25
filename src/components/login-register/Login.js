@@ -17,6 +17,26 @@ export const Login = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
+  const formData = [
+    {
+      id: 0,
+      type: "email",
+      name: "email",
+      placeholder: "ایمیل:",
+      required: true,
+      messageRequired: "لطفا ایمیل خود را وارد کنید.",
+    },
+    {
+      id: 1,
+      type: "password",
+      name: "password",
+      placeholder: "رمز عبور:",
+      minLength: 6,
+      required: true,
+      messageRequired: "لطفا رمز عبور خود را وارد کنید.",
+      messageLength: "تعداد کاراکتر های رمز عبور نمی تواند کمتر از 6 باشد.",
+    },
+  ];
   return (
     <section className="login">
       {/* image section */}
@@ -53,45 +73,30 @@ export const Login = () => {
         >
           <h2 className="login__form__title title--primary">ورود کاربر</h2>
 
-          <div className="login__form__input">
-            <input
-              className="input--primary input input--block"
-              type="email"
-              name="email"
-              placeholder="ایمیل:"
-              {...register("email", {
-                required: true,
-              })}
-            />
-            {errors.email && (
+          {formData.map((data) => (
+            <div className="login__form__input">
+              <input
+                key={data.id}
+                className="input--primary input input--block"
+                type={data.type}
+                name={data.name}
+                placeholder={data.placeholder}
+                {...register(data.name, {
+                  required: {
+                    value: data.required,
+                    message: data.messageRequired,
+                  },
+                  minLength: {
+                    value: data.minLength,
+                    message: data.messageLength,
+                  },
+                })}
+              />
               <p className="login__form__validation">
-                لطفا ایمیل خود را وارد کنید.
+                {errors[data.name]?.message}
               </p>
-            )}
-          </div>
-
-          <div className="login__form__input">
-            <input
-              className="input--primary input input--block"
-              type="password"
-              name="password"
-              placeholder="رمز عبور:"
-              {...register("password", {
-                minLength: 6,
-                required: true,
-              })}
-            />
-            {errors.password?.type === "required" && (
-              <p className="login__form__validation">
-                لطفا رمز عبور خود را وارد کنید.
-              </p>
-            )}
-            {errors.password?.type === "minLength" && (
-              <p className="login__form__validation">
-                تعداد کاراکتر های رمز عبور نمی تواند کمتر از 6 باشد.
-              </p>
-            )}
-          </div>
+            </div>
+          ))}
 
           <label className="checkbox checkbox--primary">
             من را به خاطر بسپار
