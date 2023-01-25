@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@svgr/cli": "^6.5.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -17,6 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:svg": "svgr -d src/images/courses-banner src/images/courses-banner",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -37,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }

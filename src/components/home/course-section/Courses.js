@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import CourseCart from "./CourseCart";
 import CourseModal from "../../course-modal";
+// import { course_data } from "../../../data/course-data";
 import javaScriptLogo from "./../../../images/JavaScript-logo.png";
 import bootStrapLogo from "./../../../images/bootstrap-logo.png";
 import javaLogo from "./../../../images/java-logo.png";
@@ -46,7 +47,11 @@ const Courses = () => {
     },
   ];
   const [showModal, setShowModal] = useState(false);
-  const clickHandler = () => setShowModal(true);
+  const [id, setId] = useState();
+  const clickHandler = (id) => {
+    setShowModal(true);
+    setId(+id);
+  };
   return (
     <>
       <div className="courses-info">
@@ -62,13 +67,16 @@ const Courses = () => {
               alt={course.alt}
               width={course.width}
               height={course.height}
-              onClick={clickHandler}
+              onClick={() => clickHandler(course.id)}
             />
           </div>
         ))}
       </div>
-      {showModal &&
-        createPortal(<CourseModal setModal={setShowModal} />, document.body)}
+      {/* {showModal &&
+        createPortal(
+          <CourseModal setModal={setShowModal} course={course_data} />,
+          document.body
+        )} */}
     </>
   );
 };
