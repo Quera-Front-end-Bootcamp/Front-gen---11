@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import CourseCart from "./CourseCart";
+import CourseModal from "../../course-modal";
 import javaScriptLogo from "./../../../images/JavaScript-logo.png";
 import bootStrapLogo from "./../../../images/bootstrap-logo.png";
 import javaLogo from "./../../../images/java-logo.png";
@@ -43,24 +45,31 @@ const Courses = () => {
       height: "40rem",
     },
   ];
+  const [showModal, setShowModal] = useState(false);
+  const clickHandler = () => setShowModal(true);
   return (
-    <div className="courses-info">
-      {courseData.map((course) => (
-        <div
-          className={`courses-info__cart courses-info__cart-${course.id + 1}`}
-          key={course.id}
-        >
-          <CourseCart
-            img={course.img}
-            color={course.color}
-            buttonText={course.buttonText}
-            alt={course.alt}
-            width={course.width}
-            height={course.height}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="courses-info">
+        {courseData.map((course) => (
+          <div
+            className={`courses-info__cart courses-info__cart-${course.id + 1}`}
+            key={course.id}
+          >
+            <CourseCart
+              img={course.img}
+              color={course.color}
+              buttonText={course.buttonText}
+              alt={course.alt}
+              width={course.width}
+              height={course.height}
+              onClick={clickHandler}
+            />
+          </div>
+        ))}
+      </div>
+      {showModal &&
+        createPortal(<CourseModal setModal={setShowModal} />, document.body)}
+    </>
   );
 };
 
