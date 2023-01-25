@@ -12,6 +12,7 @@ export const course_data = [
         id:1,
         img: javascript,
         name: "JavaScript",
+        pName: "جاوااسکریپت",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
@@ -40,6 +41,7 @@ export const course_data = [
         id:2,
         img: React,
         name: "React",
+        pName: "ریکت",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
@@ -68,6 +70,7 @@ export const course_data = [
         id:3,
         img: flex_grid,
         name: "flex-grid",
+        pName: "فلکس و گرید",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
@@ -96,6 +99,7 @@ export const course_data = [
         id:4,
         img: vs_code,
         name: "vs-code",
+        pName: "وی اس کد",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
@@ -124,6 +128,7 @@ export const course_data = [
         id:5,
         img: tailwind,
         name: "tailwind",
+        pName: "تیلویند",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
@@ -152,6 +157,7 @@ export const course_data = [
         id:6,
         img: freelancering,
         name: "freelancering",
+        pName: "فریلنسری",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
@@ -180,6 +186,7 @@ export const course_data = [
         id:7,
         img: git,
         name: "git",
+        pName: "گیت",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
@@ -208,6 +215,7 @@ export const course_data = [
         id:8,
         img: html,
         name: "html",
+        pName: "اچ تی ام ال",
         teacher: "دکتر بحر العلومی",
         progress: 60, // persent
         student: 53,
