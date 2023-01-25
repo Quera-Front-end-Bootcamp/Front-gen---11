@@ -13,7 +13,10 @@ section{
     direction: rtl;
     width: 80%;
     padding: 30px;
-    border-bottom: 3px solid white;
+    border-bottom: 1px solid $paragraph-color;
+    &__right{
+        width: 50%;
+    }
     &__right__title{
         color: $title-color;
         font-size: 3rem;
@@ -25,6 +28,9 @@ section{
         font-size: 2rem;
     }
 
+    &__left{
+        width: 50%;
+    }
     &__left__form__title{
         color: $title-color;
         font-size: 3rem;
@@ -33,6 +39,16 @@ section{
     &__left__form__input{
         height: 5rem;
         padding-right: 1rem;
+        background-color: #003544;
+        border: none;
+        
+    }
+    &__left__form__button {
+        Button{
+            color: #09b28b;
+            background-color: #002c38;
+            height: 5rem;
+        }
     }
 
     
@@ -73,7 +89,30 @@ section{
         }
     }
 
-
+    &__left__img{
+        &Right{
+            max-width: 20rem;
+            max-height: 20rem;
+            padding: 0 15px;
+        }
+        &Center{
+            max-width: 20rem;
+            max-height: 20rem;
+            padding: 0 15px;
+        }
+        &Left{
+            max-width: 20rem;
+            max-height: 20rem;
+            padding: 0 15px;
+        }
+    }
+    &__left__icons{
+        &__whatsapp , &__telegram , &__youtube  , &__instagram {
+            width: 6rem;
+            height: 6rem;
+            padding: 5px;
+        }
+    }
 }
 
 .FooterSection__bottom {

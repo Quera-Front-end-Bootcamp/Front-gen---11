@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "../../UI/Button";
 import "../../../styles/sass/components/footer-section/_footer-section.scss";
 
+
+
 function FooterSection() {
     
     const [input, setInput] = useState({});
@@ -49,8 +51,8 @@ function FooterSection() {
                             onChange={handleChange}
                             />
                         ))}
-                        <span className="FooterSection__top__left__form__bottom">
-                            <Button type="submit" color="main" textSize="large">
+                        <span className="FooterSection__top__left__form__button">
+                            <Button type="submit" color='#002c38' textSize="large">
                                 عضویت   
                             </Button>
                         </span>
@@ -66,7 +68,10 @@ function FooterSection() {
                     <p className="FooterSection__mid__right__firstEmail">iwillbemyvision@gmail.com</p>
                     <p className="FooterSection__mid__right__secondEmail">amir.azhkan@yahoo.com</p>
                     <div className="FooterSection__mid__right__icons">
-
+                            <img className="FooterSection__mid__left__icons__whatsapp" alt="Whatsapp-icon" src={require('../../../images/whatsapp-icon.png')}/>
+                            <img className="FooterSection__mid__left__icons__telegram" alt="telegram-icon" src={require('../../../images/telegram-icon.png')}/>
+                            <img className="FooterSection__mid__left__icons__youtube" alt="youtube-icon" src={require('../../../images/youtube-icon.png')}/>
+                            <img className="FooterSection__mid__left__icons__instagram" alt="instagram-icon" src={require('../../../images/instagram-icon.png')}/>
                     </div>
                 </div>
 
@@ -78,9 +83,9 @@ function FooterSection() {
                 </div>
 
                 <div className="FooterSection__mid__left">
-                    <img className="FooterSection__mid__left__imgRight" alt="etehadieImage" src="../../../images/etehadieh.jpg"/>
-                    <img className="FooterSection__mid__left__imgCenter" alt="etehadieImage" src="../../../images/e-namad.jpg"/>
-                    <img className="FooterSection__mid__left__imgleft" alt="etehadieImage" src="../../../images/e-namad.jpg.jpg"/>
+                    <img className="FooterSection__mid__left__imgRight" alt="etehadieImage" src={require('../../../images/etehadieh.jpg')}/>
+                    <img className="FooterSection__mid__left__imgCenter" alt="e-namadImage" src={require('../../../images/e-namad.jpg')}/>
+                    <img className="FooterSection__mid__left__imgLeft" alt="resaneh-digitalImage" src={require('../../../images/resaneh-digital.jpg')}/>
                 </div>
             </div>
 
