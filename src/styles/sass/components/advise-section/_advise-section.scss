@@ -1,4 +1,3 @@
-// @import "../../abstract/mixins";
 .ad {
   display: grid;
 }
@@ -11,39 +10,32 @@
   align-items: center;
   background-color: $color-primary;
   &__header {
-    padding: 0 3rem 0 0;
+    padding: 0 1rem 0 1rem;
+    width: 100%;
+    @include response(sm) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
   }
   &__heading {
     color: white;
     margin-bottom: 1rem;
-    font-size: 2.4rem;
-    @include response(md) {
-      font-size: 3.2rem;
-    }
-    @include response(lg) {
-      font-size: 4rem;
-    }
   }
   &__description {
-    font-size: 1.2rem;
     color: rgb(220, 213, 213);
-    @include response(md) {
-      font-size: 2.4rem;
-    }
-    @include response(lg) {
-      font-size: 3.2rem;
-    }
   }
   &__image-container {
     height: 33.3vh;
-
     img {
-      @include response(sm) {
-        clip-path: polygon(0 0, 70% 0%, 100% 100%, 0% 100%);
-      }
+      clip-path: polygon(0 0, 70% 0%, 100% 100%, 0% 100%);
       width: 50vw;
       height: 100%;
       object-fit: cover;
+      @include response(sm) {
+        clip-path: none;
+      }
     }
   }
 
@@ -57,12 +49,6 @@
         width: auto;
         height: auto;
         padding: 0.8rem 1.6rem;
-        @include response(md) {
-          width: 13rem;
-          height: 5rem;
-          right: 50%;
-          font-size: 2.4rem;
-        }
         top: 50%;
         transform: translatey(-50%);
         z-index: 1;
@@ -85,8 +71,9 @@
     .advise-container__image-container {
       order: -1;
       img {
+        clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
         @include response(sm) {
-          clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: none;
         }
       }
     }
