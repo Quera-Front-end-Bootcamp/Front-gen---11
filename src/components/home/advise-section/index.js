@@ -32,7 +32,7 @@ const AdviseSection = () => {
     },
   ];
   return (
-    <div className="ad">
+    <div className="advise">
       {adviceData.map((advice) => (
         <Advise
           title={advice.title}
