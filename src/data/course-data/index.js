@@ -1,17 +1,50 @@
-import React from "../../images/courses-banner/React.svg";
-import flex_grid from "../../images/courses-banner/flex-grid.svg";
-import freelancering from "../../images/courses-banner/freelancering.svg";
-import git from "../../images/courses-banner/git.svg";
-import html from "../../images/courses-banner/html.svg";
-import javascript from "../../images/courses-banner/javascript.svg";
-import tailwind from "../../images/courses-banner/tailwindCSS.svg";
-import vs_code from "./../../images/courses-banner/vs-code.svg";
-
+import React from "../../images/courses-banner/react-logo.png";
+import sass from "../../images/courses-banner/saas-logo.png";
+import angular from "../../images/courses-banner/angular-logo.png";
+import python from "../../images/courses-banner/python-logo.png";
+import javascript from "../../images/courses-banner/JavaScript-logo.png";
+import bootstarp from "./../../images/courses-banner/bootstrap-logo.png";
+import java from "./../../images/courses-banner/java-logo.png";
+import csharp from "./../../images/courses-banner/c-sharp-logo.png";
 export const course_data = [
   {
-    id: 1,
+    id: 0,
     img: javascript,
     name: "JavaScript",
+    pName: "جاوااسکریپت",
+    teacher: "دکتر بحر العلومی",
+    progress: 60, // persent
+    student: 53,
+    capacity: 59,
+    start: new Date("2022-03-25"),
+    end: new Date("2022-05-25"),
+    rating: 2,
+    detail:
+      "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+    price: 200000,
+    advantages: [
+      {
+        title: "لورم ایپسوم",
+        paragraph:
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.",
+      },
+      {
+        title: "لورم ایپسوم",
+        paragraph:
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.",
+      },
+      {
+        title: "لورم ایپسوم",
+        paragraph:
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.",
+      },
+    ],
+  },
+  {
+    id: 1,
+    img: bootstarp,
+    name: "bootstrap",
+    pName: "بوت استرپ",
     teacher: "دکتر بحر العلومی",
     progress: 60, // persent
     student: 53,
@@ -42,8 +75,9 @@ export const course_data = [
   },
   {
     id: 2,
-    img: React,
-    name: "React",
+    img: java,
+    name: "java",
+    pName: "جاوا",
     teacher: "دکتر بحر العلومی",
     progress: 60, // persent
     student: 53,
@@ -74,8 +108,9 @@ export const course_data = [
   },
   {
     id: 3,
-    img: flex_grid,
-    name: "flex-grid",
+    img: csharp,
+    name: "csharp",
+    pName: "سی شارپ",
     teacher: "دکتر بحر العلومی",
     progress: 60, // persent
     student: 53,
@@ -106,8 +141,9 @@ export const course_data = [
   },
   {
     id: 4,
-    img: vs_code,
-    name: "vs-code",
+    img: React,
+    name: "React",
+    pName: "ری اکت",
     teacher: "دکتر بحر العلومی",
     progress: 60, // persent
     student: 53,
@@ -138,8 +174,9 @@ export const course_data = [
   },
   {
     id: 5,
-    img: tailwind,
-    name: "tailwind",
+    img: sass,
+    name: "Sass",
+    pName: "سس",
     teacher: "دکتر بحر العلومی",
     progress: 60, // persent
     student: 53,
@@ -170,8 +207,9 @@ export const course_data = [
   },
   {
     id: 6,
-    img: freelancering,
-    name: "freelancering",
+    img: angular,
+    name: "Angular",
+    pName: "انگولار",
     teacher: "دکتر بحر العلومی",
     progress: 60, // persent
     student: 53,
@@ -202,40 +240,9 @@ export const course_data = [
   },
   {
     id: 7,
-    img: git,
-    name: "git",
-    teacher: "دکتر بحر العلومی",
-    progress: 60, // persent
-    student: 53,
-    capacity: 59,
-    start: new Date("2022-03-25"),
-    end: new Date("2022-05-25"),
-    rating: 2,
-    detail:
-      "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
-    price: 200000,
-    advantages: [
-      {
-        title: "لورم ایپسوم",
-        paragraph:
-          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.",
-      },
-      {
-        title: "لورم ایپسوم",
-        paragraph:
-          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.",
-      },
-      {
-        title: "لورم ایپسوم",
-        paragraph:
-          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.",
-      },
-    ],
-  },
-  {
-    id: 8,
-    img: html,
-    name: "html",
+    img: python,
+    name: "Python",
+    pName: "پایتون",
     teacher: "دکتر بحر العلومی",
     progress: 60, // persent
     student: 53,

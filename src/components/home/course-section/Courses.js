@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import CourseCart from "./CourseCart";
 import CourseModal from "../../course-modal";
-// import { course_data } from "../../../data/course-data";
+import { course_data } from "../../../data/course-data";
 import javaScriptLogo from "./../../../images/JavaScript-logo.png";
 import bootStrapLogo from "./../../../images/bootstrap-logo.png";
 import javaLogo from "./../../../images/java-logo.png";
@@ -55,7 +55,7 @@ const Courses = () => {
   return (
     <>
       <div className="courses-info">
-        {courseData.map((course) => (
+        {course_data.slice(0, 4).map((course) => (
           <div
             className={`courses-info__cart courses-info__cart-${course.id + 1}`}
             key={course.id}
@@ -63,8 +63,8 @@ const Courses = () => {
             <CourseCart
               img={course.img}
               color={course.color}
-              buttonText={course.buttonText}
-              alt={course.alt}
+              buttonText={course.pName}
+              alt={course.name}
               width={course.width}
               height={course.height}
               onClick={() => clickHandler(course.id)}
