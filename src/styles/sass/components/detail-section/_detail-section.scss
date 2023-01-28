@@ -4,7 +4,7 @@
   padding: 5rem 3rem;
   display: flex;
   justify-content: center;
-  @include response(sm){
+  @include response(sm) {
     flex-direction: column;
     justify-content: center;
   }
@@ -13,7 +13,7 @@
     padding: 1rem 3rem 2rem;
   }
   .card {
-    @include response(sm){
+    @include response(sm) {
       margin: 0 auto;
       order: -1;
       font-size: 2rem;
@@ -74,10 +74,6 @@
       white-space: nowrap;
     }
     .btn {
-      // position: absolute;
-      // bottom: 2rem;
-      // right: 50%;
-      
       font-size: 90%;
       margin-top: 2rem;
       margin: 2rem auto;
