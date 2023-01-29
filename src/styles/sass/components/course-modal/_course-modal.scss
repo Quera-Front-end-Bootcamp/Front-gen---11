@@ -10,10 +10,63 @@
 .modal {
   width: 40%;
   padding: 3.2rem;
-  background-color: $color-white;
+  background-color: darken($color-white, 5);
   position: fixed;
+  border-radius: 0.3rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+
+  &__information {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    color: $color-primary;
+    padding-bottom: 3.2rem;
+    border-bottom: $color-primary solid 0.2rem;
+    &__details {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+    &__image {
+      align-self: flex-start;
+      width: 20rem;
+    }
+    &__option {
+      direction: rtl;
+      display: flex;
+      gap: 0.8rem;
+    }
+    &__progress {
+      direction: rtl;
+      display: flex;
+      gap: 0.8rem;
+      &__bar {
+        width: 20rem;
+        height: 100%;
+        background-color: $color-gray;
+        position: relative;
+        &--line {
+          position: absolute;
+          left: 0;
+          height: 100%;
+          background-color: $color-primary;
+        }
+        &::before {
+          content: "% " attr(data-progress);
+          color: $color-white;
+          position: absolute;
+          left: 5%;
+          z-index: 2;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  &__button {
+    margin-top: 1.6rem;
+  }
 }

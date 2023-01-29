@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../UI/Button";
 const CourseModal = ({ setModal, course }) => {
-  console.log(course);
   const details = [
     {
       id: 0,
@@ -11,7 +10,7 @@ const CourseModal = ({ setModal, course }) => {
     {
       id: 1,
       title: "ظرفیت",
-      value: course.capacity,
+      value: `${course.capacity} نفر`,
     },
     {
       id: 2,
@@ -26,9 +25,7 @@ const CourseModal = ({ setModal, course }) => {
     {
       id: 4,
       title: "قیمت",
-      value: `${new Intl.NumberFormat("fa-Ir", { style: "currency" }).format(
-        course.price
-      )} تومان`,
+      value: `${course.price} تومان`,
       color: true,
     },
   ];
@@ -37,21 +34,37 @@ const CourseModal = ({ setModal, course }) => {
     <>
       <div className="overlay" onClick={() => setModal(false)}></div>
       <div className="modal">
-        <div>
-          <img src={course.img} alt={course.name} />
-          <h3>{course.name}</h3>
-          {details.map((detail) => (
-            <div key={detail.id}>
-              <p>{detail.title} : </p>
-              <p>{detail.value}</p>
+        <div className="modal__information">
+          <img
+            src={course.img}
+            alt={course.name}
+            className="modal__information__image"
+          />
+          <div className="modal__information__details">
+            <h2 className="modal__information__title">دوره {course.pName}</h2>
+            {details.map((detail) => (
+              <div key={detail.id} className="modal__information__option">
+                <p>{detail.title} : </p>
+                <p>{detail.value}</p>
+              </div>
+            ))}
+            <div className="modal__information__progress">
+              <p>وضغیت دوره : </p>
+              <div
+                className="modal__information__progress__bar"
+                data-progress={course.capacity}
+              >
+                <div
+                  className="modal__information__progress__bar--line"
+                  style={{ width: `${course.capacity}%` }}
+                ></div>
+              </div>
             </div>
-          ))}
-          <div>
-            <p>وضغیت دوره : </p>
-            <div></div>
           </div>
         </div>
-        <Button>مشاهده کامل</Button>
+        <div className="modal__button">
+          <Button color="gray">مشاهده کامل</Button>
+        </div>
       </div>
     </>
   );

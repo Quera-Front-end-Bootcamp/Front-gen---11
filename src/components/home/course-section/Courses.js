@@ -28,11 +28,14 @@ const Courses = () => {
           </div>
         ))}
       </div>
-      {/* {showModal &&
+      {showModal &&
         createPortal(
-          <CourseModal setModal={setShowModal} course={course_data} />,
+          <CourseModal
+            setModal={setShowModal}
+            course={course_data.find((course) => course.id === id)}
+          />,
           document.body
-        )} */}
+        )}
     </>
   );
 };
