@@ -13,7 +13,7 @@ export const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onChange" });
   const onSubmit = (data) => {
     console.log(data);
   };
@@ -25,6 +25,8 @@ export const Login = () => {
       placeholder: "ایمیل:",
       required: true,
       messageRequired: "لطفا ایمیل خود را وارد کنید.",
+      messagePattern: "لطفا ایمیل معتبر وارد کنید.",
+      pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
     },
     {
       id: 1,
@@ -37,14 +39,17 @@ export const Login = () => {
       messageLength: "تعداد کاراکتر های رمز عبور نمی تواند کمتر از 6 باشد.",
     },
   ];
+
   return (
     <section className="login">
       {/* image section */}
       <div className="login__img">
         <div className="login__img__contact">
           <div className="media login__img__contact__name">
-            <h2 className="title--secondary ">آکادمی آموزشی بامبو</h2>
-            <img src={logo} className="icon" />
+            <h2 className="title--secondary media__title">
+              آکادمی آموزشی بامبو
+            </h2>
+            <img src={logo} className="icon media__img" />
           </div>
           <div className="login__img__contact__icons">
             <a href="">
@@ -71,12 +76,14 @@ export const Login = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="login__form--container"
         >
-          <h2 className="login__form__title title--primary">ورود کاربر</h2>
+          <div className="login__form__title">
+            <h2 className="title--primary">ورود کاربر</h2>
 
+            <img src={logo} className="icon" />
+          </div>
           {formData.map((data) => (
-            <div className="login__form__input">
+            <div className="login__form__input" key={data.id}>
               <input
-                key={data.id}
                 className="input--primary input input--block"
                 type={data.type}
                 name={data.name}
@@ -90,6 +97,10 @@ export const Login = () => {
                     value: data.minLength,
                     message: data.messageLength,
                   },
+                  pattern: {
+                    value: data.pattern,
+                    message: data.messagePattern,
+                  },
                 })}
               />
               <p className="login__form__validation">
@@ -98,27 +109,22 @@ export const Login = () => {
             </div>
           ))}
 
-          <label className="checkbox checkbox--primary">
-            من را به خاطر بسپار
-            <input type="checkbox" />
-          </label>
-
-          <Link
-            to="/reset-pass"
-            className="login__form__link link--secondary link"
-          >
-            فراموشی رمز
-          </Link>
-
-          <div class="login__form__btns">
-            <Link
-              to="/register"
-              className="login__form__link link--secondary link"
-            >
-              ثبت نام
+          <div className="login__form__extra">
+            <label className="checkbox checkbox--primary">
+              من را به خاطر بسپار
+              <input type="checkbox" />
+            </label>
+            <Link to="/reset-pass" className=" link--secondary link">
+              فراموشی رمز
             </Link>
-            <Button color="main" textSize="normal">
+          </div>
+
+          <div className="login__form__btn--container">
+            <Button color="main" freeSize="false">
               ورود
+            </Button>
+            <Button color="secondary" freeSize="true">
+              ثبت نام
             </Button>
           </div>
         </form>
