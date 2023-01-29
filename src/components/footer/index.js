@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Button from "./../UI/Button";
-import whatsappImage from "./../../images/";
+import whatsappImage from "./../../imgs/whatsapp.svg";
+import telegramImage from "./../../imgs/telegram.svg";
+import youtubeImage from "./../../imgs/youtube.svg";
+import instagramImage from "./../../imgs/instagram.svg";
 function FooterSection() {
   const [input, setInput] = useState({});
 
@@ -73,22 +76,22 @@ function FooterSection() {
             <img
               className="footer-section__mid__left__icons__whatsapp"
               alt="Whatsapp-icon"
-              src={require("../../../images/whatsapp-icon.png")}
+              src={whatsappImage}
             />
             <img
               className="footer-section__mid__left__icons__telegram"
               alt="telegram-icon"
-              src={require("../../../images/telegram-icon.png")}
+              src={telegramImage}
             />
             <img
               className="footer-section__mid__left__icons__youtube"
               alt="youtube-icon"
-              src={require("../../../images/youtube-icon.png")}
+              src={youtubeImage}
             />
             <img
               className="footer-section__mid__left__icons__instagram"
               alt="instagram-icon"
-              src={require("../../../images/instagram-icon.png")}
+              src={instagramImage}
             />
           </div>
         </div>
