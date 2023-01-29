@@ -103,9 +103,9 @@ export const Register = () => {
             </a>
           </div>
         </div>
-        <a href="" className="register__img__home">
+        <Link to="/home" href="" className="register__img__home">
           <img src={home} className="icon" />
-        </a>
+        </Link>
       </div>
       {/* form section */}
       <div className="register__form">
@@ -145,14 +145,12 @@ export const Register = () => {
 
           <div className="register__form__btn--container">
             <Button color="main" freeSize="true">
-              <Link to="/login" className="link link--primary">
+              <Link to="/login" className="link link--primary btn__link">
                 ورود
               </Link>
             </Button>
             <Button color="secondary" freeSize="true">
-              <Link to="/" className="link link--secondary">
-                ثبت نام
-              </Link>
+              ثبت نام
             </Button>
           </div>
         </form>
