@@ -37,21 +37,21 @@
       width: 40%;
     }
 
-    // @media screen and (max-width: 640px) {
-    //   padding-left: 1.5rem;
-    //   padding-right: 1.5rem;
-    //   &__about {
-    //     flex-direction: column;
-    //   }
-    //   &__des {
-    //     width: 100%;
-    //     font-size: 1rem;
-    //   }
+    @include response(md) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      &__about {
+        flex-direction: column;
+      }
+      &__des {
+        width: 100%;
+        font-size: 2rem;
+      }
 
-    //   &__title {
-    //     font-size: 2rem;
-    //   }
-    // }
+      &__title {
+        font-size: 3rem;
+      }
+    }
   }
 
   &__search {

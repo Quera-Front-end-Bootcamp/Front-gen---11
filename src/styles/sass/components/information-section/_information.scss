@@ -33,14 +33,13 @@
   &__box__des {
     text-align: center;
   }
-
-  // @media screen and (max-width: 640px) {
-  //   flex-direction: column;
-  //   &__box {
-  //     padding: 30px;
-  //     height: 100%;
-  //   }
-  // }
+  @include response(md) {
+    flex-direction: column;
+    &__box {
+      padding: 2rem;
+      height: 100%;
+    }
+  }
 
   // @media screen and (max-width: 330px) {
   //   flex-direction: column;
