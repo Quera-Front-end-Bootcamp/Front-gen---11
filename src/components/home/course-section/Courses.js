@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import CourseCart from "./CourseCart";
-import CourseModal from "../../course-modal";
+import CourseModal from "./../../course-modal";
 import { course_data } from "../../../data/course-data";
 const Courses = () => {
   const [showModal, setShowModal] = useState(false);
@@ -10,6 +10,7 @@ const Courses = () => {
     setShowModal(true);
     setId(+id);
   };
+
   return (
     <>
       <div className="courses-info">

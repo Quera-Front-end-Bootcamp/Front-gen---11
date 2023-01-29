@@ -4,6 +4,9 @@ import whatsappImage from "./../../imgs/whatsapp.svg";
 import telegramImage from "./../../imgs/telegram.svg";
 import youtubeImage from "./../../imgs/youtube.svg";
 import instagramImage from "./../../imgs/instagram.svg";
+import etehadieh from "./../../images/etehadieh.jpg";
+import enamd from "./../../images/e-namad.jpg";
+import resane from "./../../images/resaneh-digital.jpg";
 function FooterSection() {
   const [input, setInput] = useState({});
 
@@ -109,17 +112,17 @@ function FooterSection() {
           <img
             className="footer-section__mid__left__imgRight"
             alt="etehadieImage"
-            src={require("../../../images/etehadieh.jpg")}
+            src={etehadieh}
           />
           <img
             className="footer-section__mid__left__imgCenter"
             alt="e-namadImage"
-            src={require("../../../images/e-namad.jpg")}
+            src={enamd}
           />
           <img
             className="footer-section__mid__left__imgLeft"
             alt="resaneh-digitalImage"
-            src={require("../../../images/resaneh-digital.jpg")}
+            src={resane}
           />
         </div>
       </div>
