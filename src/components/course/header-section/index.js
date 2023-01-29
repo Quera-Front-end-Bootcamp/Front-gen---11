@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../../components/UI/Header";
-import JavaScript from "../../../images/JavaScript-logo.png";
+import JavaScript from "./../../../images/courses-banner/JavaScript-logo.png";
 import Capacity from "../../../images/capacity.svg";
 import Student from "../../../images/student.svg";
 import Teacher from "../../../images/teacher.svg";
