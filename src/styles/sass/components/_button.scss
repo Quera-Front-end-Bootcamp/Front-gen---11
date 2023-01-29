@@ -25,6 +25,10 @@
     color: $color_primary;
     background-color: #c0c9cb;
   }
+  &__color__tertiary {
+    background-color: $color_tertiary;
+    color: $color_white;
+  }
   &__freesize {
     width: auto;
     height: auto;
