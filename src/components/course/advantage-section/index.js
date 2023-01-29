@@ -34,13 +34,17 @@ const Advantage = () => {
   ];
   return (
     <div className="advantages">
-      <img src={course} alt="cousre picture" className="course" />
+      <img src={course} className="course" alt="cousre_picture" />
       <div className="advantages__container">
         <h2 className="advantages__heading">مزایای این دوره:</h2>
         <ul className="advantages__list">
           {advatages.map((adavntage) => (
             <li className="advantages__list__item" key={adavntage.id}>
-              <img src={adavntage.src} className="advantages__icon" />
+              <img
+                src={adavntage.src}
+                className="advantages__icon"
+                alt="advantage_image"
+              />
               <div>
                 {adavntage.items[0]}
                 <br />
