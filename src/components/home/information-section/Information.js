@@ -2,7 +2,6 @@ import React from "react";
 import student from "../../../images/student.svg";
 import teacher from "../../../images/teacher.svg";
 import course from "../../../images/course.svg";
-
 const Information = () => {
   return (
     <section className="information">
