@@ -1,11 +1,11 @@
-import React from "../../images/courses-banner/React.svg";
-import flex_grid from "../../images/courses-banner/flex-grid.svg";
-import freelancering from "../../images/courses-banner/freelancering.svg";
-import git from "../../images/courses-banner/git.svg";
-import html from "../../images/courses-banner/html.svg";
-import javascript from "../../images/courses-banner/javascript.svg";
-import tailwind from "../../images/courses-banner/tailwindCSS.svg";
-import vs_code from "../../images/courses-banner/vs-code.svg";
+import React from "../../images/courses-banner/React.png";
+import flex_grid from "../../images/courses-banner/flex-grid.png";
+import freelancering from "../../images/courses-banner/freelancering.png";
+import git from "../../images/courses-banner/git.png";
+import html from "../../images/courses-banner/html-css.png";
+import javascript from "../../images/courses-banner/javascript.png";
+import tailwind from "../../images/courses-banner/tailwindCss.png";
+import vs_code from "../../images/courses-banner/vs-code.png";
 
 export const course_data = [
     {

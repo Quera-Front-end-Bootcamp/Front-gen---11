@@ -7,7 +7,7 @@ html {
   font-size: 62.5%;
   font-family: iransans;
   @include response(xxl) {
-    font-size: 90%;
+    font-size: 70%;
   }
   @include response(xl) {
     font-size: 55%;
@@ -24,4 +24,11 @@ html {
 }
 body {
   font-size: 1.6rem;
+}
+a {
+  all: unset;
+  text-decoration: none;
+}
+ol,ul,li{
+  list-style: none;
 }
