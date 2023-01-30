@@ -8,7 +8,7 @@ import home from "./../../imgs/home.svg";
 import instagram from "./../../imgs/instagram.svg";
 import youtube from "./../../imgs/youtube.svg";
 import logo from "./../../imgs/logo.svg";
-export const Login = () => {
+export const Register = () => {
   const {
     register,
     handleSubmit,
@@ -20,6 +20,15 @@ export const Login = () => {
   const formData = [
     {
       id: 0,
+      type: "text",
+      name: "name",
+      placeholder: "نام کاربری :",
+      messageRequired: "لطفا نام کاربری خود را وارد کنید.",
+
+      required: true,
+    },
+    {
+      id: 1,
       type: "email",
       name: "email",
       placeholder: "ایمیل:",
@@ -29,7 +38,35 @@ export const Login = () => {
       pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
     },
     {
-      id: 1,
+      id: 2,
+      type: "number",
+      name: "phone",
+      placeholder: "شماره موبایل:",
+      required: true,
+      pattern: /^(\+98|0)?9\d{9}$/,
+      messageRequired: "لطفا شماره موبایل خود را وارد کنید.",
+      messagePattern: "شماره موبایل معتبر نمی باشد.",
+    },
+    {
+      id: 3,
+      type: "number",
+      name: "identification",
+      placeholder: "شماره ملی:",
+      pattern: /^[0-9]{10}$/,
+      required: true,
+      messageRequired: "لطفا شماره ملی خود را وارد کنید.",
+      messagePattern: "شماره ملی معتبر نمی باشد.",
+    },
+    {
+      id: 4,
+      type: "date",
+      name: "data",
+      placeholder: "تاریخ تولد:",
+      required: true,
+      messageRequired: "لطفا تاریخ تولد خود را وارد کنید.",
+    },
+    {
+      id: 5,
       type: "password",
       name: "password",
       placeholder: "رمز عبور:",
@@ -41,17 +78,17 @@ export const Login = () => {
   ];
 
   return (
-    <section className="login">
+    <section className="register">
       {/* image section */}
-      <div className="login__img">
-        <div className="login__img__contact">
-          <div className="media login__img__contact__name">
+      <div className="register__img">
+        <div className="register__img__contact">
+          <div className="media register__img__contact__name">
             <h2 className="title--secondary media__title">
               آکادمی آموزشی بامبو
             </h2>
             <img src={logo} className="icon media__img" alt="bamboo logo" />
           </div>
-          <div className="login__img__contact__icons">
+          <div className="register__img__contact__icons">
             <a href="">
               <img src={youtube} className="icon" alt="youtube icon" />
             </a>
@@ -66,23 +103,20 @@ export const Login = () => {
             </a>
           </div>
         </div>
-        <Link to="/home" href="" className="login__img__home">
+        <Link to="/home" href="" className="register__img__home">
           <img src={home} className="icon" alt="home icon" />
         </Link>
       </div>
       {/* form section */}
-      <div className="login__form">
+      <div className="register__form">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="login__form--container"
+          className="register__form--container"
         >
-          <div className="login__form__title">
-            <h2 className="title--primary">ورود کاربر</h2>
+          <h2 className="title--primary">ثبت نام</h2>
 
-            <img src={logo} className="icon" alt="bamboo logo" />
-          </div>
           {formData.map((data) => (
-            <div className="login__form__input" key={data.id}>
+            <div className="register__form__input" key={data.id}>
               <input
                 className="input--primary input input--block"
                 type={data.type}
@@ -103,31 +137,20 @@ export const Login = () => {
                   },
                 })}
               />
-              <p className="login__form__validation">
+              <p className="register__form__validation">
                 {errors[data.name]?.message}
               </p>
             </div>
           ))}
 
-          <div className="login__form__extra">
-            <label className="checkbox checkbox--primary">
-              من را به خاطر بسپار
-              <input type="checkbox" />
-            </label>
-            <Link to="/reset-pass" className=" link--secondary link">
-              فراموشی رمز
-            </Link>
-          </div>
-
-          <div className="login__form__btn--container">
-            <Button color="main" freeSize="false">
-              ورود
-            </Button>
-
-            <Button color="secondary" freeSize="true">
-              <Link to="/register" className="link link--main btn__link">
-                ثبت نام
+          <div className="register__form__btn--container">
+            <Button color="main" freeSize="true">
+              <Link to="/login" className="link link--primary btn__link">
+                ورود
               </Link>
+            </Button>
+            <Button color="secondary" freeSize="true">
+              ثبت نام
             </Button>
           </div>
         </form>
