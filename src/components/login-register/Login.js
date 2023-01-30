@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../UI/Button";
 import telegram from "./../../imgs/telegram.svg";
 import whatsapp from "./../../imgs/whatsapp.svg";
@@ -49,25 +49,25 @@ export const Login = () => {
             <h2 className="title--secondary media__title">
               آکادمی آموزشی بامبو
             </h2>
-            <img src={logo} className="icon media__img" />
+            <img src={logo} className="icon media__img" alt="bamboo logo" />
           </div>
           <div className="login__img__contact__icons">
             <a href="">
-              <img src={youtube} className="icon" />
+              <img src={youtube} className="icon" alt="youtube icon" />
             </a>
             <a href="">
-              <img src={whatsapp} className="icon" />
+              <img src={whatsapp} className="icon" alt="whatsapp icon" />
             </a>
             <a href="">
-              <img src={telegram} className="icon" />
+              <img src={telegram} className="icon" alt="telegram icon" />
             </a>
             <a href="">
-              <img src={instagram} className="icon" />
+              <img src={instagram} className="icon" alt="instagram icon" />
             </a>
           </div>
         </div>
-        <Link to="/home" href="" className="register__img__home">
-          <img src={home} className="icon" />
+        <Link to="/home" href="" className="login__img__home">
+          <img src={home} className="icon" alt="home icon" />
         </Link>
       </div>
       {/* form section */}
@@ -79,7 +79,7 @@ export const Login = () => {
           <div className="login__form__title">
             <h2 className="title--primary">ورود کاربر</h2>
 
-            <img src={logo} className="icon" />
+            <img src={logo} className="icon" alt="bamboo logo" />
           </div>
           {formData.map((data) => (
             <div className="login__form__input" key={data.id}>
