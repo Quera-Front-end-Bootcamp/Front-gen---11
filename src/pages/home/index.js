@@ -11,7 +11,7 @@ import FooterSection from "../../components/footer";
 const Home = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <Hero />
         <Information />
