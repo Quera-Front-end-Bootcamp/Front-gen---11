@@ -90,10 +90,10 @@ export const Register = () => {
           </div>
           <div className="register__img__contact__icons">
             <a href="">
-              <img src={youtube} alt="youtube icon" />
+              <img src={youtube} className="icon" alt="youtube icon" />
             </a>
             <a href="">
-              <img src={whatsapp} alt="whatsapp icon" />
+              <img src={whatsapp} className="icon" alt="whatsapp icon" />
             </a>
             <a href="">
               <img src={telegram} className="icon" alt="telegram icon" />
