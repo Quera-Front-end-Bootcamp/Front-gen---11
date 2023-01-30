@@ -66,9 +66,9 @@ export const Login = () => {
             </a>
           </div>
         </div>
-        <a href="" className="login__img__home">
+        <Link to="/home" href="" className="register__img__home">
           <img src={home} className="icon" />
-        </a>
+        </Link>
       </div>
       {/* form section */}
       <div className="login__form">
@@ -123,8 +123,11 @@ export const Login = () => {
             <Button color="main" freeSize="false">
               ورود
             </Button>
+
             <Button color="secondary" freeSize="true">
-              ثبت نام
+              <Link to="/register" className="link link--main btn__link">
+                ثبت نام
+              </Link>
             </Button>
           </div>
         </form>
