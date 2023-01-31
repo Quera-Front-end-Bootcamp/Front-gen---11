@@ -83,7 +83,7 @@ export const Login = () => {
             </Link>
           </div>
           {formData.map((data) => (
-            <div className="login__form__input" key={data.id}>
+            <div key={data.id}>
               <input
                 className="input--primary input input--block"
                 type={data.type}
