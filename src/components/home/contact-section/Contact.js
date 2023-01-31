@@ -49,9 +49,7 @@ export default function Contact() {
             />
           ))}
           <div className="contact__button">
-            <Button type="submit" color="main" textSize="large">
-              ارسال
-            </Button>
+            <Button color="main">ارسال</Button>
           </div>
         </form>
       </div>
