@@ -39,6 +39,7 @@ export default function Contact() {
           <h2 className="contact__form__header">پیشنهاد وانتقاد</h2>
           {formData.map((inp) => (
             <input
+              key={inp.id}
               className="contact__form__input"
               type={inp.type}
               name={inp.name}
