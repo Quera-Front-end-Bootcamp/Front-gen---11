@@ -6,9 +6,6 @@
 html {
   font-size: 62.5%;
   font-family: iransans;
-  @include response(xxl) {
-    font-size: 90%;
-  }
   @include response(xl) {
     font-size: 55%;
   }

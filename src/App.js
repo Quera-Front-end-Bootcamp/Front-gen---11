@@ -8,6 +8,7 @@ import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 function App() {
   return (
+
     <Routes>
       <Route path={ROUTES.HOME_ROUTE} element={<Home />} />
       <Route path="/" element={<Navigate to="/home" />} />
