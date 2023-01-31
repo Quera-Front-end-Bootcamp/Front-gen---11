@@ -65,6 +65,7 @@ function CourseList() {
           {course_data.map((item) => {
             return (
               <CourseCard
+                allData={item}
                 key={item.id}
                 img={item.banner}
                 alt={item.name}
