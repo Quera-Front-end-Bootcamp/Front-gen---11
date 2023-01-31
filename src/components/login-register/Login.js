@@ -45,11 +45,11 @@ export const Login = () => {
       {/* image section */}
       <div className="login__img">
         <div className="login__img__contact">
-          <div className="media login__img__contact__name">
-            <h2 className="title--secondary media__title">
+          <div className=" login__img__contact__name">
+            <h2 className="title--secondary login__img__contact__name__title">
               آکادمی آموزشی بامبو
             </h2>
-            <img src={logo} className="icon media__img" alt="bamboo logo" />
+            <img src={logo} className="icon" alt="bamboo logo" />
           </div>
           <div className="login__img__contact__icons">
             <a href="">
@@ -78,8 +78,9 @@ export const Login = () => {
         >
           <div className="login__form__title">
             <h2 className="title--primary">ورود کاربر</h2>
-
-            <img src={logo} className="icon" alt="bamboo logo" />
+            <Link to="/home" href="">
+              <img src={home} className="icon" alt="home icon" />
+            </Link>
           </div>
           {formData.map((data) => (
             <div className="login__form__input" key={data.id}>

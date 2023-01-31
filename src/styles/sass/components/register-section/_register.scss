@@ -5,21 +5,23 @@ $icon-height: 25px;
   width: 100%;
   direction: rtl;
   display: flex;
-  flex-direction: column;
+
   //height: 100vh;
 
   @include response(md) {
-    flex-direction: row;
+    flex-direction: column;
   }
   &__img {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 30vh;
+    width: 60%;
+    height: 100vh;
+    order: 1;
     //height: 30vh;
     @include response(md) {
-      width: 60%;
-      height: 100vh;
+      order: -1;
+      width: 100%;
+      height: 30vh;
     }
     background: linear-gradient(
         0deg,
@@ -44,10 +46,10 @@ $icon-height: 25px;
       padding-bottom: 1.5rem;
     }
     &__contact__icons {
-      display: none;
+      display: flex;
+      justify-content: space-between;
       @include response(md) {
-        display: flex;
-        justify-content: space-between;
+        display: none;
       }
     }
 
@@ -61,25 +63,25 @@ $icon-height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 40%;
+    height: 100vh;
     padding: 2rem;
     //height: 70vh;
     @include response(md) {
-      width: 40%;
-      height: 100vh;
+      width: 100%;
+      height: 70vh;
     }
   }
   &__form--container {
-    height: 100%;
     width: 100%;
     gap: 0.5rem;
+    height: auto;
     justify-content: center;
     display: flex;
     flex-direction: column;
 
     @include response(md) {
-      gap: 2rem;
-      height: auto;
+      gap: 0.5rem;
     }
   }
 
