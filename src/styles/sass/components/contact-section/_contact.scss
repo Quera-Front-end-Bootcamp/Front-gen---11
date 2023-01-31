@@ -34,7 +34,10 @@ $color-input-text: #0cdbab;
       height: 50vh;
     }
   }
-
+  &__form__validation {
+    padding-top: 0.5rem;
+    color: $color-gray;
+  }
   &__form__container {
     gap: 2rem;
     height: 100%;
@@ -51,20 +54,16 @@ $color-input-text: #0cdbab;
   &__button {
     align-self: flex-end;
   }
-  .contact__form__input {
-    background-color: $color-input-background;
+}
+
+.input--secondary {
+  background-color: $color-input-background;
+  color: $color-input-text;
+
+  &::placeholder {
     color: $color-input-text;
-    border: none;
-    outline: none;
-    border-radius: $border-radius-primary * 1rem;
-    padding: 2rem;
-
-    &:focus {
-      border-bottom: 1px solid $color-focus-input;
-    }
-
-    &::placeholder {
-      color: $color-input-text;
-    }
+  }
+  &:focus {
+    border-bottom: 1px solid $color-focus-input;
   }
 }
