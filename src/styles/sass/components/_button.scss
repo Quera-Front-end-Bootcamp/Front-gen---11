@@ -6,11 +6,11 @@
   border-radius: $border-radius-primary * 1rem;
   text-align: center;
   font-size: 1.6rem;
-  @include response(sm) {
+  /* @include response(sm) {
     width: 8rem;
     height: 3rem;
     font-size: 0.8rem;
-  }
+  } */
   cursor: pointer;
   &__color__main {
     color: $color_white;
