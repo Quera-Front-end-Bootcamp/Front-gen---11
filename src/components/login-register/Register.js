@@ -82,8 +82,8 @@ export const Register = () => {
       {/* image section */}
       <div className="register__img">
         <div className="register__img__contact">
-          <div className="media register__img__contact__name">
-            <h2 className="title--secondary media__title">
+          <div className="register__img__contact__name">
+            <h2 className="title--secondary register__img__contact__name__title">
               آکادمی آموزشی بامبو
             </h2>
             <img src={logo} className="icon media__img" alt="bamboo logo" />
@@ -144,12 +144,12 @@ export const Register = () => {
           ))}
 
           <div className="register__form__btn--container">
-            <Button color="main" freeSize="true">
-              <Link to="/login" className="link link--primary btn__link">
+            <Button color="secondary" freeSize="true">
+              <Link to="/login" className="link link--secondary btn__link">
                 ورود
               </Link>
             </Button>
-            <Button color="secondary" freeSize="true">
+            <Button color="main" freeSize="true">
               ثبت نام
             </Button>
           </div>

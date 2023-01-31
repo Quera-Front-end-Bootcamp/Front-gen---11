@@ -121,14 +121,13 @@ export const Login = () => {
           </div>
 
           <div className="login__form__btn--container">
-            <Button color="main" freeSize="false">
-              ورود
-            </Button>
-
             <Button color="secondary" freeSize="true">
               <Link to="/register" className="link link--main btn__link">
                 ثبت نام
               </Link>
+            </Button>
+            <Button color="main" freeSize="false">
+              ورود
             </Button>
           </div>
         </form>
