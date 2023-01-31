@@ -14,7 +14,7 @@ const Header = () => {
       <nav className="header__links">
         <ul className="header__links--link">
           {links.map((link) => (
-            <li className="header__links--link-item" key={link.id}>
+            <li key={link.id} className="header__links--link-item" >
               <Link className="header__links--link-item-link" to={link.url}>
                 {link.name}
               </Link>
@@ -24,9 +24,9 @@ const Header = () => {
       </nav>
 
       <div className="header__login">
-        <Link className="header__login-btn">ورود</Link>
+        <Link className="header__login-btn" to="#demo">ورود</Link>
         <Button color="main" freeSize={true} opacity={true}>
-          <Link className="header__login-btn">ثبت نام</Link>
+          <Link className="header__login-btn" to="#demo">ثبت نام</Link>
         </Button>
       </div>
     </header>
