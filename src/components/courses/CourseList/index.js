@@ -66,7 +66,7 @@ function CourseList() {
             return (
               <CourseCard
                 key={item.id}
-                img={item.img}
+                img={item.banner}
                 alt={item.name}
                 topic={`${item.name} دوره`}
                 teacher={item.teacher}
