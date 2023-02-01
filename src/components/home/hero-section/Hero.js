@@ -1,6 +1,7 @@
 import React from "react";
 import magnifying from "../../../images/magnifying.svg";
 import Button from "../../UI/Button";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -17,7 +18,9 @@ const Hero = () => {
             بتوانیم با راهکار های نوین ، فرصتی . برای افراد خواهان پیشرفت فراهم
             کنیم
           </p>
-          <Button color="secondary">مشاهده دوره ها</Button>
+          <Button color="secondary">
+            <Link to="/courses">مشاهده دوره ها</Link>
+          </Button>
         </div>
       </div>
       <div className="hero__search">
