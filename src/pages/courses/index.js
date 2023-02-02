@@ -7,14 +7,14 @@ const Courses = () => {
   return (
     <>
       <div className="courses_header">
-        <Header />
+        <Header absolute={false} />
         <div className="hero__search">
           <img
             className="hero__search__icon"
             src={magnifying}
             alt="magnifying"
           />
-          <input className="hero__search__input" placeholder="جستجو" />
+          <input className="hero__search__input" placeholder="جستجو" color="white"/>
         </div>
       </div>
       <main>

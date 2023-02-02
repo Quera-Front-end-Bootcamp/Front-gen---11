@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import magnifying from "../../../images/magnifying.svg";
 import Button from "../../UI/Button";
-import Header from "../../UI/Header";
+
 
 const Hero = () => {
   return (
     <section className="hero">
-      <Header/>
       <div className="hero__info">
         <h1 className="hero__info__title">
           باید راه بهتری برای آموزش ساخته میشد ,<br />

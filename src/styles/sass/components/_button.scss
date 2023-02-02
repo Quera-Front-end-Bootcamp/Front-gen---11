@@ -30,6 +30,15 @@
     background-color: $color_tertiary;
     color: $color_white;
   }
+  &__color__transparent {
+    color: $color_white;
+    background-color: Transparent;
+    border-radius: 0;
+    
+    &:hover{
+      background-color: rgba( $color_primary,0.5);
+    }
+  }
   &__freesize {
     width: auto;
     height: auto;

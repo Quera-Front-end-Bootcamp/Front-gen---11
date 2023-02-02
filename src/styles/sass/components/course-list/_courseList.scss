@@ -1,7 +1,11 @@
 $color-bg: #e9e9e9;
 .courses_header{
-    background: url("../../../../images/course-header.png");
-    z-index: 1;
+  background: linear-gradient(
+    0,
+    rgba($color-primary, 0.6),
+    rgba($color-primary, 0.6)
+  ),
+  url("../../../../images/course-header.png");
 }
 .courses-list {
   width: 100%;
