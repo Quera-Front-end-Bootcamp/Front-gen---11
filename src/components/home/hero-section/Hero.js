@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import magnifying from "../../../images/magnifying.svg";
 import Button from "../../UI/Button";
 
@@ -17,7 +18,9 @@ const Hero = () => {
             بتوانیم با راهکار های نوین ، فرصتی . برای افراد خواهان پیشرفت فراهم
             کنیم
           </p>
-          <Button color="secondary">مشاهده دوره ها</Button>
+          <Link to="/courses">
+            <Button color="secondary">مشاهده دوره ها</Button>
+          </Link>
         </div>
       </div>
       <div className="hero__search">

@@ -66,7 +66,7 @@ $icon-height: 25px;
       margin-top: auto;
       margin-bottom: 1.5rem;
       display: block;
-
+      cursor: pointer;
       @include response(sm) {
         display: none;
       }
