@@ -2,15 +2,15 @@ import React from "react";
 import CourseHeader from "../../components/course/header-section";
 import Advantage from "../../components/course/advantage-section";
 import Detail from "../../components/course/detail-section";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 const Course = () => {
-  const courseId = useParams()
-  console.log(courseId);
+  const location = useLocation()
+  const data = location.state.data
   return (
     <main>
-      <CourseHeader />
-      <Detail />
-      <Advantage />
+      <CourseHeader data={data}/>
+      <Detail data={data}/>
+      <Advantage data={data}/>
     </main>
   );
 };

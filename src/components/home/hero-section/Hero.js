@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import magnifying from "../../../images/magnifying.svg";
 import Button from "../../UI/Button";
+import Header from "../../UI/Header";
 
 const Hero = () => {
   return (
     <section className="hero">
+      <Header/>
       <div className="hero__info">
         <h1 className="hero__info__title">
           باید راه بهتری برای آموزش ساخته میشد ,<br />
@@ -25,7 +27,7 @@ const Hero = () => {
       </div>
       <div className="hero__search">
         <img className="hero__search__icon" src={magnifying} alt="magnifying" />
-        <input className="hero__search__input" placeholder="جستوجو" />
+        <input className="hero__search__input" placeholder="جستجو" />
       </div>
     </section>
   );

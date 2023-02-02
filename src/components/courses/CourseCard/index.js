@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import CourseModal from "../../course-modal";
+import { COURSE_ROUTE } from "../../../routes";
 function CourseCard(props) {
-  console.log(props);
   const [showModal, setShowModal] = useState(false);
   const detailHandler = () => {
     setShowModal(true);
@@ -22,11 +22,7 @@ function CourseCard(props) {
           <div className="courses__card--capacity">
             ظرفیت : {props.capacity}
           </div>
-          <a
-            href="#demosas"
-            onClick={detailHandler}
-            className="courses__card--dtails"
-          >
+          <a href="#de" onClick={detailHandler} className="courses__card--dtails">
             جزئیات
           </a>
         </div>
@@ -35,12 +31,11 @@ function CourseCard(props) {
           {props.price}
         </div>
         <Link
-          to={"/course/:" + props.allData.id}
+          to={`${COURSE_ROUTE}/${props.allData.name}`}
+          state={{ data: props.allData }}
           className="courses__card--seebtn"
         >
-          {/* <a className="courses__card--seebtn"> */}
           مشاهده دوره
-          {/* </a> */}
         </Link>
       </div>
       {showModal &&

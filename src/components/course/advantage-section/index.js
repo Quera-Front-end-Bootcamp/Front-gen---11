@@ -2,7 +2,7 @@ import course from "../../../images/course-detail.jpg";
 import learn from "../../../images/learn.svg";
 import online from "../../../images/online-learning.svg";
 import success from "../../../images/success.svg";
-const Advantage = () => {
+const Advantage = ({data}) => {
   const advatages = [
     {
       id: 1,

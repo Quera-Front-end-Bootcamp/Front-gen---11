@@ -15,7 +15,6 @@ export const Login = () => {
     formState: { errors },
   } = useForm({ mode: "onChange" });
   const onSubmit = (data) => {
-    console.log(data);
   };
   const formData = [
     {

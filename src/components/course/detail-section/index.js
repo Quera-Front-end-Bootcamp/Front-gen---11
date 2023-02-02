@@ -1,6 +1,6 @@
 import logo from "../../../images/js-logo.svg";
 import Button from "../../UI/Button";
-const Detail = () => {
+const Detail = ({data}) => {
   return (
     <div className="detail-section">
       <div className="detail-section__description">

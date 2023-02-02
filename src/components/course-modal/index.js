@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { COURSE_ROUTE } from "../../routes";
 import Button from "../UI/Button";
 const CourseModal = ({ setModal, course }) => {
   const details = [
@@ -63,7 +65,9 @@ const CourseModal = ({ setModal, course }) => {
           </div>
         </div>
         <div className="modal__button">
-          <Button color="gray">مشاهده کامل</Button>
+          <Link to={`${COURSE_ROUTE}/${course.name}`} state={{ data: course }}>
+            <Button color="gray">مشاهده دوره</Button>
+          </Link>
         </div>
       </div>
     </>

@@ -8,7 +8,7 @@ import Calendar from "../../../images/calendar.svg";
 import Like from "../../../images/like.svg";
 import Star from "../../../images/star.svg";
 
-const CourseHeader = () => {
+const CourseHeader = ({data}) => {
   return (
     <div className="course-header">
       <Header />

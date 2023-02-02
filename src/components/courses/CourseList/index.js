@@ -8,10 +8,10 @@ function CourseList() {
     setSelectedValue(e.target.value)
   };
   return (
-    <section className="courses">
-      <header className="courses__header">
-        <ul className="courses__filter">
-          <li className="courses__filter-item">
+    <section className="courses-list">
+      <header className="courses-list__header">
+        <ul className="courses-list__filter">
+          <li className="courses-list__filter-item">
             <input
               name="filter"
               type="radio"
@@ -22,7 +22,7 @@ function CourseList() {
             />
             <label htmlFor="all">همه دوره ها</label>
           </li>
-          <li className="courses__filter-item">
+          <li className="courses-list__filter-item">
             <input
               name="filter"
               type="radio"
@@ -33,7 +33,7 @@ function CourseList() {
             />
             <label htmlFor="new">جدید ترین ها</label>
           </li>
-          <li className="courses__filter-item">
+          <li className="courses-list__filter-item">
             <input
               name="filter"
               type="radio"
@@ -44,7 +44,7 @@ function CourseList() {
             />
             <label htmlFor="expensives">گران ترین ها</label>
           </li>
-          <li className="courses__filter-item">
+          <li className="courses-list__filter-item">
             <input
               name="filter"
               type="radio"
@@ -56,12 +56,12 @@ function CourseList() {
             <label htmlFor="notComplete">تکمیل نشده ها</label>
           </li>
         </ul>
-        <div className="courses__topic">
+        <div className="courses-list__topic">
           <h2>دوره های آموزشی</h2>
         </div>
       </header>
-      <main className="courses__main">
-        <div className="courses__cards">
+      <main className="courses-list__main">
+        <div className="courses-list__cards">
           {course_data.map((item) => {
             return (
               <CourseCard
@@ -78,7 +78,7 @@ function CourseList() {
           })}
         </div>
       </main>
-      <footer className="courses__footer">
+      <footer className="courses-list__footer">
         <Pagination/>
       </footer>
     </section>
