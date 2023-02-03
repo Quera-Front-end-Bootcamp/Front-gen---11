@@ -15,6 +15,8 @@
   }
   @include response(md) {
     height: 55rem;
+    width: 80%;
+    margin: 8rem auto;
   }
   @include response(sm) {
     margin: 3.2rem;
@@ -28,7 +30,7 @@
       height: 60%;
       background-color: #f7df1e;
       @include response(md) {
-        width: 50%;
+        width: 40%;
         height: 50%;
       }
       @include response(sm) {
@@ -43,7 +45,7 @@
       height: 40%;
       background-color: #cab2ef;
       @include response(md) {
-        width: 50%;
+        width: 40%;
         height: 50%;
       }
       @include response(sm) {
@@ -58,7 +60,7 @@
       height: 30%;
       background-color: #ffc7f8;
       @include response(md) {
-        width: 40%;
+        width: 30%;
         height: 30%;
       }
       bottom: -$percantage * 1%;
@@ -69,7 +71,7 @@
       height: 60%;
       background-color: #6a1577;
       @include response(md) {
-        width: 50%;
+        width: 40%;
       }
       top: $percantage * 1%;
       right: -$percantage * 1%;
