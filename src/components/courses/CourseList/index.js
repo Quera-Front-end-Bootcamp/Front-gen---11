@@ -2,60 +2,64 @@ import React, { useState } from "react";
 import CourseCard from "../CourseCard";
 import { course_data } from "../../../data/course-data";
 import Pagination from "../Pagination";
+import DropdownFilter from "../DropdownFilter";
 function CourseList() {
   const [selectedValue, setSelectedValue] = useState("all");
   const handleChange = (e) => {
-    setSelectedValue(e.target.value)
+    setSelectedValue(e.target.value);
   };
   return (
     <section className="courses-list">
       <header className="courses-list__header">
-        <ul className="courses-list__filter">
-          <li className="courses-list__filter-item">
-            <input
-              name="filter"
-              type="radio"
-              value="all"
-              id="all"
-              checked={selectedValue === "all"}
-              onChange={handleChange}
-            />
-            <label htmlFor="all">همه دوره ها</label>
-          </li>
-          <li className="courses-list__filter-item">
-            <input
-              name="filter"
-              type="radio"
-              value="new"
-              id="new"
-              checked={selectedValue === "new"}
-              onChange={handleChange}
-            />
-            <label htmlFor="new">جدید ترین ها</label>
-          </li>
-          <li className="courses-list__filter-item">
-            <input
-              name="filter"
-              type="radio"
-              value="expensives"
-              id="expensives"
-              checked={selectedValue === "expensives"}
-              onChange={handleChange}
-            />
-            <label htmlFor="expensives">گران ترین ها</label>
-          </li>
-          <li className="courses-list__filter-item">
-            <input
-              name="filter"
-              type="radio"
-              value="notComplete"
-              id="notComplete"
-              checked={selectedValue === "notComplete"}
-              onChange={handleChange}
-            />
-            <label htmlFor="notComplete">تکمیل نشده ها</label>
-          </li>
-        </ul>
+        <div className="courses-list__filters">
+          <ul className="courses-list__filter">
+            <li className="courses-list__filter-item">
+              <input
+                name="filter"
+                type="radio"
+                value="all"
+                id="all"
+                checked={selectedValue === "all"}
+                onChange={handleChange}
+              />
+              <label htmlFor="all">همه دوره ها</label>
+            </li>
+            <li className="courses-list__filter-item">
+              <input
+                name="filter"
+                type="radio"
+                value="new"
+                id="new"
+                checked={selectedValue === "new"}
+                onChange={handleChange}
+              />
+              <label htmlFor="new">جدید ترین ها</label>
+            </li>
+            <li className="courses-list__filter-item">
+              <input
+                name="filter"
+                type="radio"
+                value="expensives"
+                id="expensives"
+                checked={selectedValue === "expensives"}
+                onChange={handleChange}
+              />
+              <label htmlFor="expensives">گران ترین ها</label>
+            </li>
+            <li className="courses-list__filter-item">
+              <input
+                name="filter"
+                type="radio"
+                value="notComplete"
+                id="notComplete"
+                checked={selectedValue === "notComplete"}
+                onChange={handleChange}
+              />
+              <label htmlFor="notComplete">تکمیل نشده ها</label>
+            </li>
+          </ul>
+          <DropdownFilter selectedValue={selectedValue} handleChange={handleChange}/>
+        </div>
         <div className="courses-list__topic">
           <h2>دوره های آموزشی</h2>
         </div>
@@ -79,7 +83,7 @@ function CourseList() {
         </div>
       </main>
       <footer className="courses-list__footer">
-        <Pagination/>
+        <Pagination />
       </footer>
     </section>
   );

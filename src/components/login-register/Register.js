@@ -89,16 +89,16 @@ export const Register = () => {
             <img src={logo} className="icon media__img" alt="bamboo logo" />
           </div>
           <div className="register__img__contact__icons">
-            <a href="">
+            <a href="#demo">
               <img src={youtube} className="icon" alt="youtube icon" />
             </a>
-            <a href="">
+            <a href="#demo">
               <img src={whatsapp} className="icon" alt="whatsapp icon" />
             </a>
-            <a href="">
+            <a href="#demo">
               <img src={telegram} className="icon" alt="telegram icon" />
             </a>
-            <a href="">
+            <a href="#demo">
               <img src={instagram} className="icon" alt="instagram icon" />
             </a>
           </div>
