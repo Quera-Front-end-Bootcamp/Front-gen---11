@@ -6,11 +6,11 @@
   border-radius: $border-radius-primary * 1rem;
   text-align: center;
   font-size: 1.6rem;
-  // @include response(sm) {
-  //   width: 8rem;
-  //   height: 3rem;
-  //   font-size: 0.8rem;
-  // }
+  @include response(sm) {
+    width: 8rem;
+    height: 3rem;
+    font-size: 0.8rem;
+  }
   cursor: pointer;
   &__color__main {
     color: $color_white;
@@ -29,10 +29,20 @@
     background-color: $color_tertiary;
     color: $color_white;
   }
+  &__color__transparent {
+    color: $color_white;
+    background-color: Transparent;
+    border-radius: 0;
+
+    &:hover {
+      background-color: rgba($color_primary, 0.5);
+    }
+  }
   &__freesize {
     width: auto;
     height: auto;
     padding: 0.8rem 1.6rem;
+    white-space: nowrap;
   }
   &__opacity__main {
     background-color: rgba($color_primary, 0.6);

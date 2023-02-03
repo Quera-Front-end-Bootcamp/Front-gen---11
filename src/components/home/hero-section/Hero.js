@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import magnifying from "../../../images/magnifying.svg";
 import Button from "../../UI/Button";
+
 
 const Hero = () => {
   return (
@@ -17,12 +19,14 @@ const Hero = () => {
             بتوانیم با راهکار های نوین ، فرصتی . برای افراد خواهان پیشرفت فراهم
             کنیم
           </p>
-          <Button color="secondary">مشاهده دوره ها</Button>
+          <Link to="/courses">
+            <Button color="secondary">مشاهده دوره ها</Button>
+          </Link>
         </div>
       </div>
       <div className="hero__search">
         <img className="hero__search__icon" src={magnifying} alt="magnifying" />
-        <input className="hero__search__input" placeholder="جستوجو" />
+        <input className="hero__search__input" placeholder="جستجو" />
       </div>
     </section>
   );

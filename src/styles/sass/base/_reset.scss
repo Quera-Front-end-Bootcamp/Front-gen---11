@@ -22,3 +22,10 @@ html {
 body {
   font-size: 1.6rem;
 }
+a {
+  all: unset;
+  text-decoration: none;
+}
+ol,ul,li{
+  list-style: none;
+}

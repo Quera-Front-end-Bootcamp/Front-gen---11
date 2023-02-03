@@ -12,7 +12,6 @@ function FooterSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(input);
   };
   const handleChange = (e) => {
     const name = e.target.name;
@@ -47,8 +46,9 @@ function FooterSection() {
             className="footer-section__top__left__form"
           >
             <h4 className="footer-section__top__left__form__title">خبرنامه</h4>
-            {formData.map((inp) => (
+            {formData.map((inp, index) => (
               <input
+                key={index}
                 className="footer-section__top__left__form__input"
                 type={inp.type}
                 name={inp.name}

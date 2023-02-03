@@ -55,6 +55,7 @@
   }
 
   &__search {
+    direction: rtl;
     display: flex;
     &__icon {
       width: 4rem;
@@ -73,9 +74,12 @@
       );
       border: none;
       outline: none;
-      padding: 1.6rem;
+      padding: 1rem 0.5rem;
       color: $color-white;
       width: 100%;
+      &::placeholder{
+        color: $color-white;
+      }
     }
   }
 }

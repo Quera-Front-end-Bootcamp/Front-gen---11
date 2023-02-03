@@ -5,21 +5,22 @@ $icon-height: 25px;
   width: 100%;
   direction: rtl;
   display: flex;
-  flex-direction: column;
-  //height: 100vh;
+  height: 100vh;
 
-  @include response(md) {
-    flex-direction: row;
+  @include response(sm) {
+    flex-direction: column;
   }
   &__img {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 30vh;
-    //height: 30vh;
-    @include response(md) {
-      width: 60%;
-      height: 100vh;
+    width: 60%;
+    height: 100vh;
+    order: 1;
+
+    @include response(sm) {
+      order: -1;
+      width: 100%;
+      height: 30vh;
     }
     background: linear-gradient(
         0deg,
@@ -40,18 +41,32 @@ $icon-height: 25px;
       transform: translateY(-50%);
     }
     &__contact__name {
+      @include response(sm) {
+        flex-direction: column;
+      }
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
       border-bottom: 1px solid white;
       padding-bottom: 1.5rem;
     }
+    &__contact__name__title {
+      order: -1;
+      @include response(sm) {
+        order: 1;
+      }
+    }
     &__contact__icons {
-      display: none;
-      @include response(md) {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
+      @include response(sm) {
+        display: none;
       }
     }
 
     &__home {
+      cursor: pointer;
       margin-top: auto;
       margin-bottom: 1.5rem;
     }
@@ -61,46 +76,41 @@ $icon-height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 2rem;
+    width: 40%;
+    height: 100vh;
+    padding: 4rem;
     //height: 70vh;
-    @include response(md) {
-      width: 40%;
-      height: 100vh;
+    @include response(sm) {
+      width: 100%;
+      height: 70vh;
     }
   }
   &__form--container {
-    height: 100%;
     width: 100%;
     gap: 0.5rem;
+    height: 100%;
     justify-content: center;
     display: flex;
     flex-direction: column;
 
-    @include response(md) {
-      gap: 2rem;
-      height: auto;
+    @include response(sm) {
+      justify-content: flex-start;
     }
   }
 
   &__form__btn--container {
-    @include response(md) {
-      flex-direction: row;
-      gap: 1rem;
-      margin-right: auto;
-    }
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    margin-right: auto;
+
+    @include response(sm) {
+      flex-direction: column;
+      margin-right: 0;
+      gap: 1rem;
+    }
   }
 
   &__form__validation {
     padding-top: 0.5rem;
     color: red;
   }
-}
-.btn__link {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
