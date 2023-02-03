@@ -1,40 +1,7 @@
-import course from "../../../images/course-detail.jpg";
-import learn from "../../../images/learn.svg";
-import online from "../../../images/online-learning.svg";
-import success from "../../../images/success.svg";
 const Advantage = ({ data }) => {
-  const advatages = [
-    {
-      id: 1,
-      src: online,
-      items: [
-        "آشنایی با زبان برنامه نویسی جاوااسکریپت",
-        `در پایان این دوره‌ی آموزشی، شما دانشجوی گرامی، قادر به فهمی عمیق
-      ومناسب نسبت به این زبان خواهید بود.`,
-      ],
-    },
-    {
-      id: 2,
-      src: learn,
-      items: [
-        "آشنایی با زبان برنامه نویسی جاوااسکریپت",
-        `در پایان این دوره‌ی آموزشی، شما دانشجوی گرامی، قادر به فهمی عمیق
-      ومناسب نسبت به این زبان خواهید بود.`,
-      ],
-    },
-    {
-      id: 3,
-      src: success,
-      items: [
-        "آشنایی با زبان برنامه نویسی جاوااسکریپت",
-        `در پایان این دوره‌ی آموزشی، شما دانشجوی گرامی، قادر به فهمی عمیق
-      ومناسب نسبت به این زبان خواهید بود.`,
-      ],
-    },
-  ];
   return (
     <div className="advantages">
-      <img src={course} className="course" alt="cousre_picture" />
+      <img src={data.img} className="course" alt={data.name} />
       <div className="advantages__container">
         <h2 className="advantages__heading">مزایای این دوره:</h2>
         <ul className="advantages__list">
