@@ -1,25 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../../components/UI/Header";
-import JavaScript from "./../../../images/courses-banner/JavaScript-logo.png";
 import Capacity from "../../../images/capacity.svg";
 import Student from "../../../images/student.svg";
 import Teacher from "../../../images/teacher.svg";
 import Calendar from "../../../images/calendar.svg";
 import Like from "../../../images/like.svg";
 import Star from "../../../images/star.svg";
-
-const CourseHeader = ({data}) => {
+import { course_data } from "../../../data/course-data";
+import { useParams } from "react-router";
+const CourseHeader = ({ data }) => {
   return (
     <div className="course-header">
       <Header />
 
       <div className="course-header__information">
-        <img
-          className="course-header__icon"
-          src={JavaScript}
-          alt="javascript"
-        />
-        <h1 className="course-header__title">دوره جاوا اسکریپت</h1>
+        <img className="course-header__icon" src={data.img} alt={data.name} />
+        <h1 className="course-header__title">دوره {data.pName}</h1>
 
         <div className="course-header__des">
           <div className="course-header__numbers">
@@ -30,7 +26,7 @@ const CourseHeader = ({data}) => {
                 alt="capacity"
               />
               <h4>ظرفیت :</h4>
-              <span>59 نفر</span>
+              <span>{data.capacity} نفر</span>
             </div>
             <div className="course-header__capacity">
               <img
@@ -39,16 +35,16 @@ const CourseHeader = ({data}) => {
                 alt="capacity"
               />
               <h4>دانشجو :</h4>
-              <span>53 نفر</span>
+              <span>{data.student} نفر</span>
             </div>
           </div>
 
           <div className="course-header__box">
             <div
               className="course-header__box__percent"
-              style={{ width: "60%" }}
+              style={{ width: `${data.capacity}%` }}
             >
-              <span>60 %</span>
+              <span>{data.capacity} %</span>
             </div>
           </div>
         </div>
@@ -62,7 +58,7 @@ const CourseHeader = ({data}) => {
             alt="teacher"
           />
           <h3>مدرس :</h3>
-          <span>دکتر بحر العلومی</span>
+          <span>{data.teacher}</span>
         </div>
         <div className="course-header__about__box">
           <img
@@ -72,12 +68,12 @@ const CourseHeader = ({data}) => {
           />
           <div className="course-header__about__box__calendar">
             <h3>تاریخ شروع :</h3>
-            <span>1400 / 1 / 1</span>
+            <span>{data.start.toLocaleString("fa-IR")}</span>
           </div>
 
           <div className="course-header__about__box__calendar">
             <h3>تاریخ پایان :</h3>
-            <span>1400 / 1 / 1</span>
+            <span>{data.end.toLocaleString("fa-IR")}</span>
           </div>
         </div>
         <div className="course-header__about__box">

@@ -2,7 +2,7 @@ import course from "../../../images/course-detail.jpg";
 import learn from "../../../images/learn.svg";
 import online from "../../../images/online-learning.svg";
 import success from "../../../images/success.svg";
-const Advantage = ({data}) => {
+const Advantage = ({ data }) => {
   const advatages = [
     {
       id: 1,
@@ -38,18 +38,14 @@ const Advantage = ({data}) => {
       <div className="advantages__container">
         <h2 className="advantages__heading">مزایای این دوره:</h2>
         <ul className="advantages__list">
-          {advatages.map((adavntage) => (
+          {data.advantages.map((adavntage) => (
             <li className="advantages__list__item" key={adavntage.id}>
               <img
                 src={adavntage.src}
                 className="advantages__icon"
                 alt="advantage_image"
               />
-              <div>
-                {adavntage.items[0]}
-                <br />
-                {adavntage.items[1]}
-              </div>
+              <div>{adavntage.paragraph}</div>
             </li>
           ))}
         </ul>

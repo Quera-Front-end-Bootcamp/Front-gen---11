@@ -22,7 +22,11 @@ function CourseCard(props) {
           <div className="courses__card--capacity">
             ظرفیت : {props.capacity}
           </div>
-          <a href="#de" onClick={detailHandler} className="courses__card--dtails">
+          <a
+            href="#de"
+            onClick={detailHandler}
+            className="courses__card--dtails"
+          >
             جزئیات
           </a>
         </div>
@@ -31,7 +35,7 @@ function CourseCard(props) {
           {props.price}
         </div>
         <Link
-          to={`${COURSE_ROUTE}/${props.allData.name}`}
+          to={`${COURSE_ROUTE}/${props.allData.id}`}
           state={{ data: props.allData }}
           className="courses__card--seebtn"
         >

@@ -65,9 +65,11 @@ const CourseModal = ({ setModal, course }) => {
           </div>
         </div>
         <div className="modal__button">
-          <Link to={`${COURSE_ROUTE}/${course.name}`} state={{ data: course }}>
-            <Button color="gray">مشاهده دوره</Button>
-          </Link>
+          <Button color="gray">
+            <Link to={`${COURSE_ROUTE}/${course.id}`} state={{ data: course }}>
+              مشاهده دوره
+            </Link>
+          </Button>
         </div>
       </div>
     </>
