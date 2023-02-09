@@ -6,8 +6,8 @@ const NotFound = () => {
   return (
     <div className="container">
       <h1>خطای ۴۰۴</h1>
-      <img src={gif} alt="" />
-      <p >صفحه مورد نظر شما یافت نشد!</p>
+      <img src={gif} alt="ship gif" />
+      <p>صفحه مورد نظر شما یافت نشد!</p>
       <Link to="/">
         <Button freeSize="false">بازگشت به صفحه اصلی</Button>
       </Link>
