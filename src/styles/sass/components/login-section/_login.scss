@@ -24,7 +24,7 @@ $icon-height: 25px;
         rgba($color-green, 0.7),
         rgba($color-green, 0.7)
       ),
-      url(./../../../../imgs/login.jpg);
+      url(./../../../../assets/images/login.jpg);
     background-size: cover;
     position: relative;
     align-items: center;
@@ -105,7 +105,7 @@ $icon-height: 25px;
     @include response(sm) {
       img {
         display: block;
-        content: url(./../../../../imgs/home-primary.svg);
+        content: url(./../../../../assets/images/home-primary.svg);
       }
     }
   }

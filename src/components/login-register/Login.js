@@ -2,20 +2,19 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
-import telegram from "./../../imgs/telegram.svg";
-import whatsapp from "./../../imgs/whatsapp.svg";
-import home from "./../../imgs/home.svg";
-import instagram from "./../../imgs/instagram.svg";
-import youtube from "./../../imgs/youtube.svg";
-import logo from "./../../imgs/logo.svg";
+import telegram from "./../../assets/images/telegram.svg";
+import whatsapp from "./../../assets/images/whatsapp.svg";
+import home from "./../../assets/images/home.svg";
+import instagram from "./../../assets/images/instagram.svg";
+import youtube from "./../../assets/images/youtube.svg";
+import logo from "./../../assets/images/logo.svg";
 export const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-  const onSubmit = (data) => {
-  };
+  const onSubmit = (data) => {};
   const formData = [
     {
       id: 0,

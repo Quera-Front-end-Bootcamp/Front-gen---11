@@ -1,6 +1,6 @@
 import Button from "../../UI/Button";
 
-import pic from "../../../images/contact-img.jpg";
+import pic from "../../../assets/images/contact-img.jpg";
 import { useForm } from "react-hook-form";
 
 export default function Contact() {
