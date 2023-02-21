@@ -10,6 +10,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
@@ -32,6 +33,7 @@ export default function Contact() {
           message: res.data?.message?.[0]?.message,
           success: true,
         });
+        reset();
         setTimeout(() => {
           setAlertState({
             ...alertState,
