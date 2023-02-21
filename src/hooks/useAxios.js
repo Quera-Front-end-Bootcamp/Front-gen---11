@@ -1,16 +1,11 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const useAxios = ({
-  url,
-  method = "get",
-  params,
-  config, }) => {
+const useAxios = ({ url, method = "get", params, config }) => {
   const [response, setResponse] = useState(undefined);
-  const [responseError, setError] = useState('');
+  const [responseError, setError] = useState("");
   const [getloading, setGetLoading] = useState(true);
   const [updateLoading, setUpdateLoading] = useState(false);
-
 
   const fetchData = (data) => {
     return new Promise((resolve, rejects) => {
@@ -41,15 +36,13 @@ const useAxios = ({
         .catch((error) => {
           setGetLoading(false);
           setUpdateLoading(false);
-          setError(error)
+          setError(error);
           reject(error);
-        });
+        })
     });
   };
 
-
   return { response, responseError, getloading, updateLoading, run };
-
 };
 
 export default useAxios;

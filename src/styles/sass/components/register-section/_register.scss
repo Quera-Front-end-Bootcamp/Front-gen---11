@@ -74,6 +74,7 @@ $icon-height: 25px;
 
   &__form {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 40%;
@@ -104,8 +105,16 @@ $icon-height: 25px;
 
     @include response(sm) {
       flex-direction: column;
+      align-items: center;
       margin-right: 0;
       gap: 1rem;
+    }
+    .btn {
+      @include response(sm) {
+        width: 70%;
+        font-size: larger;
+        gap: 2rem;
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
@@ -8,13 +8,66 @@ import home from "./../../assets/images/home.svg";
 import instagram from "./../../assets/images/instagram.svg";
 import youtube from "./../../assets/images/youtube.svg";
 import logo from "./../../assets/images/logo.svg";
+import useAxios from "../../hooks/useAxios";
+import { loginApi } from "../../core/api";
+import Alert from "../UI/Alert";
+import { getItem, setItem } from "../../core/storage/storage.service";
+import jwt_decode from "jwt-decode";
+import * as routes from "../../routes";
+import { useNavigate } from "react-router-dom";
 export const Login = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
-  const onSubmit = (data) => {};
+
+  const { updateLoading, run } = useAxios({
+    method: "post",
+    url: loginApi,
+  });
+  const [alertState, setAlertState] = useState({
+    show: false,
+    message: "",
+    success: null,
+  });
+
+  const onSubmit = (data) => {
+    run(data)
+      .then((res) => {
+        setAlertState({
+          show: true,
+          message: "شما با موفقیت وارد شدید",
+          success: true,
+        });
+        setItem("token", res.data.result.jwtToken);
+        const token = getItem("token");
+        console.log("decoded: ", jwt_decode(token));
+        setTimeout(() => {
+          setAlertState({
+            ...alertState,
+            show: false,
+            success: null,
+          });
+          navigate(routes.HOME_ROUTE);
+        }, 5000);
+      })
+      .catch((error) => {
+        setAlertState(() => ({
+          show: true,
+          message: error.response?.data?.message?.message?.[0].message,
+          success: false,
+        }));
+        setTimeout(() => {
+          setAlertState({
+            ...alertState,
+            show: false,
+            success: null,
+          });
+        }, 5000);
+      });
+  };
   const formData = [
     {
       id: 0,
@@ -31,10 +84,10 @@ export const Login = () => {
       type: "password",
       name: "password",
       placeholder: "رمز عبور:",
-      minLength: 6,
+      minLength: 8,
       required: true,
       messageRequired: "لطفا رمز عبور خود را وارد کنید.",
-      messageLength: "تعداد کاراکتر های رمز عبور نمی تواند کمتر از 6 باشد.",
+      messageLength: "تعداد کاراکتر های رمز عبور نمی تواند کمتر از 8 باشد.",
     },
   ];
 
@@ -70,6 +123,9 @@ export const Login = () => {
       </div>
       {/* form section */}
       <div className="login__form">
+        {alertState.show && (
+          <Alert success={alertState.success}>{alertState.message}</Alert>
+        )}
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="login__form--container"
@@ -119,13 +175,13 @@ export const Login = () => {
           </div>
 
           <div className="login__form__btn--container">
-            <Button color="secondary" freeSize="true">
+            <Button color="secondary" freeSize={false}>
               <Link to="/register" className="link link--main btn__link">
                 ثبت نام
               </Link>
             </Button>
-            <Button color="main" freeSize="false">
-              ورود
+            <Button color="main" freeSize={false} disabled={!isValid}>
+              {updateLoading ? <div className="loader"></div> : "ورود"}
             </Button>
           </div>
         </form>
