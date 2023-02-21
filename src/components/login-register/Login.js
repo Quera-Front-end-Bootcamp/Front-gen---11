@@ -11,11 +11,14 @@ import logo from "./../../assets/images/logo.svg";
 import useAxios from "../../hooks/useAxios";
 import { loginApi } from "../../core/api";
 import Alert from "../UI/Alert";
-import { getItem, setItem } from "../../core/storage/storage.service";
-import jwt_decode from "jwt-decode";
+import { setItem } from "../../core/storage/storage.service";
 import * as routes from "../../routes";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/auth";
+
 export const Login = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
     register,
@@ -41,9 +44,13 @@ export const Login = () => {
           message: "شما با موفقیت وارد شدید",
           success: true,
         });
-        setItem("token", res.data.result.jwtToken);
-        const token = getItem("token");
-        console.log("decoded: ", jwt_decode(token));
+        const token = res.data.result.jwtToken;
+        setItem("token", token);
+        dispatch(
+          addToken({
+            token: res.data.result.jwtToken,
+          })
+        );
         setTimeout(() => {
           setAlertState({
             ...alertState,
@@ -51,7 +58,7 @@ export const Login = () => {
             success: null,
           });
           navigate(routes.HOME_ROUTE);
-        }, 5000);
+        }, 3000);
       })
       .catch((error) => {
         setAlertState(() => ({
@@ -65,7 +72,7 @@ export const Login = () => {
             show: false,
             success: null,
           });
-        }, 5000);
+        }, 3000);
       });
   };
   const formData = [

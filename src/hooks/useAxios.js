@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useAxios = ({ url, method = "get", params, config }) => {
+const useAxios = ({ url, method = "get", params, headers, config }) => {
   const [response, setResponse] = useState(undefined);
   const [responseError, setError] = useState("");
   const [getloading, setGetLoading] = useState(true);
@@ -15,6 +15,7 @@ const useAxios = ({ url, method = "get", params, config }) => {
           url,
           data,
           params,
+          headers,
           ...config,
         })
         .then(resolve)
@@ -38,7 +39,7 @@ const useAxios = ({ url, method = "get", params, config }) => {
           setUpdateLoading(false);
           setError(error);
           reject(error);
-        })
+        });
     });
   };
 

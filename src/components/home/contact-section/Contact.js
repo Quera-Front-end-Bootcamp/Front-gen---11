@@ -1,17 +1,59 @@
 import Button from "../../UI/Button";
-
 import pic from "../../../assets/images/contact-img.jpg";
 import { useForm } from "react-hook-form";
+import useAxios from "../../../hooks/useAxios";
+import { contactUsApi } from "../../../core/api";
+import { useState } from "react";
+import Alert from "../../UI/Alert";
 
 export default function Contact() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
+  const { run, updateLoading } = useAxios({
+    url: contactUsApi,
+    method: "post",
+  });
+  const [alertState, setAlertState] = useState({
+    show: false,
+    message: "",
+    success: null,
+  });
+
   const onSubmit = (data) => {
-    console.log(data);
+    run(data)
+      .then((res) => {
+        console.log(res.data.message[0].message);
+        setAlertState({
+          show: true,
+          message: res.data?.message?.[0]?.message,
+          success: true,
+        });
+        setTimeout(() => {
+          setAlertState({
+            ...alertState,
+            show: false,
+            success: null,
+          });
+        }, 3000);
+      })
+      .catch((error) => {
+        setAlertState(() => ({
+          show: true,
+          message: error.response?.data?.message?.message?.[0].message,
+          success: false,
+        }));
+        setTimeout(() => {
+          setAlertState({
+            ...alertState,
+            show: false,
+            success: null,
+          });
+        }, 3000);
+      });
   };
   const formData = [
     {
@@ -41,6 +83,9 @@ export default function Contact() {
           onSubmit={handleSubmit(onSubmit)}
           className="contact__form__container"
         >
+          {alertState.show && (
+            <Alert success={alertState.success}>{alertState.message}</Alert>
+          )}
           <h2 className="contact__form__header">پیشنهاد وانتقاد</h2>
           {formData.map((inp) => (
             <div key={inp.id}>
@@ -63,7 +108,9 @@ export default function Contact() {
             </div>
           ))}
           <div className="contact__button">
-            <Button color="main">ارسال</Button>
+            <Button color="main" disabled={!isValid}>
+              {updateLoading ? <div className="loader"></div> : "ارسال"}
+            </Button>
           </div>
         </form>
       </div>

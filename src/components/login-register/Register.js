@@ -33,7 +33,6 @@ export const Register = () => {
   const onSubmit = (e) => {
     run({ ...e, profile: "image.png" })
       .then((res) => {
-        console.log("res", res.data.result);
         setAlertState({
           show: true,
           message: "ثبت نام با موفقیت انجام شد",
