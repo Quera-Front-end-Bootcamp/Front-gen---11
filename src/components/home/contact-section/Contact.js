@@ -45,7 +45,7 @@ export default function Contact() {
       .catch((error) => {
         setAlertState(() => ({
           show: true,
-          message: error.response?.data?.message?.message?.[0].message,
+          message: error.response?.data?.message?.message?.[0].message || "ارسال پیام با خطا مواجه شد.",
           success: false,
         }));
         setTimeout(() => {

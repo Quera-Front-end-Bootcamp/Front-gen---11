@@ -1,9 +1,17 @@
+import { useRef } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 const Alert = ({ success = true, children }) => {
+  const alertRef = useRef(null);
+  const onClosehandler = () => {
+    alertRef.current.style.display = "none"
+  };
   return (
-    <div className={`alert alert-${success ? "success" : "danger"}`}>
+    <div
+      ref={alertRef}
+      className={`alert alert-${success ? "success" : "danger"}`}
+    >
       {children}
-      {/* <AiOutlineCloseCircle /> */}
+      <AiOutlineCloseCircle className="close" onClick={onClosehandler} />
     </div>
   );
 };
