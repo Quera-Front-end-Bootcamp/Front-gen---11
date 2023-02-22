@@ -35,7 +35,7 @@ function CourseCard(props) {
           {props.price}
         </div>
         <Link
-          to={`${COURSE_ROUTE}/${props.allData.id}`}
+          to={`${COURSE_ROUTE}/${props.allData._id}`}
           state={{ data: props.allData }}
           className="courses__card--seebtn"
         >

@@ -22,13 +22,13 @@ const Detail = ({ data }) => {
       </div>
       <div className="card">
         <div className="card__header">
-          <img src={data.img} alt={data.img} className="card__logo" />
+          <img src={data.imagg} alt={data.title} className="card__logo" />
           <h3 className="card__heading">دوره {data.pName}</h3>
         </div>
         <div className="card__body">
           <div className="card__price">
             <span>قیمت دوره:</span>
-            <span>{data.price} تومان</span>
+            <span>{data.cost} تومان</span>
           </div>
           <div className="card__discount">
             <span>تخفیف:</span>
@@ -36,7 +36,7 @@ const Detail = ({ data }) => {
           </div>
           <div className="card__remain-price">
             <span>مبلغ قابل پرداخت:</span>
-            <span>{data.price - (data.price * 10) / 100} تومان</span>
+            <span>{data.cost - (data.cost * 10) / 100} تومان</span>
           </div>
           <div className="card__gray-boxes">
             <span className="card__gray-box"></span>

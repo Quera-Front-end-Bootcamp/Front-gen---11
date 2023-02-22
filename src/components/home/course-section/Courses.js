@@ -1,30 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import CourseCart from "./CourseCart";
 import CourseModal from "./../../course-modal";
 import { course_data } from "../../../data/course-data";
+import { useSelector, useDispatch } from "react-redux";
+import { findCourseById, getAllCourses } from "../../../store/course";
 const Courses = () => {
+  const dispatch = useDispatch();
+  const { loading, courses, course } = useSelector((store) => store.course);
   const [showModal, setShowModal] = useState(false);
-  const [id, setId] = useState();
+  const [id, setId] = useState("");
   const clickHandler = (id) => {
     setShowModal(true);
-    setId(+id);
+    setId(id);
+    // dispatch(findCourseById({ id }));
+    // console.log(id);
+    // console.log(course);
+  };
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+  const fetchCourses = async () => {
+    try {
+      const res = dispatch(getAllCourses());
+    } catch (err) {
+      throw new err();
+    }
   };
 
   return (
     <>
       <div className="courses-info">
-        {course_data.slice(0, 4).map((course) => (
+        {courses.slice(0, 4).map((course, index) => (
           <div
-            className={`courses-info__cart courses-info__cart-${course.id + 1}`}
-            key={course.id}
+            className={`courses-info__cart courses-info__cart-${index + 1}`}
+            key={course._id}
           >
             <CourseCart
-              img={course.img}
+              img={`.${course.image}`}
               color={course.color}
               buttonText={course.pName}
               alt={course.name}
-              onClick={() => clickHandler(course.id)}
+              onClick={() => clickHandler(course._id)}
             />
           </div>
         ))}
@@ -33,7 +52,7 @@ const Courses = () => {
         createPortal(
           <CourseModal
             setModal={setShowModal}
-            course={course_data.find((course) => course.id === id)}
+            course={courses.find((c) => c._id === id)}
           />,
           document.body
         )}

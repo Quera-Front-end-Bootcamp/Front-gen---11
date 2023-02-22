@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CourseCard from "../CourseCard";
 import { course_data } from "../../../data/course-data";
 import Pagination from "../Pagination";
 import DropdownFilter from "../DropdownFilter";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllCourses } from "../../../store/course";
 function CourseList() {
+  const dispatch = useDispatch();
+  const { loading, courses } = useSelector((store) => store.course);
   const [selectedValue, setSelectedValue] = useState("all");
   const handleChange = (e) => {
     setSelectedValue(e.target.value);
+  };
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+  const fetchCourses = async () => {
+    try {
+      const res = dispatch(getAllCourses());
+    } catch (err) {
+      throw err;
+    }
   };
   return (
     <section className="courses-list">
@@ -58,7 +74,10 @@ function CourseList() {
               <label htmlFor="notComplete">تکمیل نشده ها</label>
             </li>
           </ul>
-          <DropdownFilter selectedValue={selectedValue} handleChange={handleChange}/>
+          <DropdownFilter
+            selectedValue={selectedValue}
+            handleChange={handleChange}
+          />
         </div>
         <div className="courses-list__topic">
           <h2>دوره های آموزشی</h2>
@@ -66,17 +85,17 @@ function CourseList() {
       </header>
       <main className="courses-list__main">
         <div className="courses-list__cards">
-          {course_data.map((item) => {
+          {courses.map((item) => {
             return (
               <CourseCard
                 allData={item}
-                key={item.id}
+                key={item._id}
                 img={item.banner}
-                alt={item.name}
-                topic={`${item.name} دوره`}
-                teacher={item.teacher}
+                alt={item.title}
+                topic={`${item.title} دوره`}
+                teacher={item.teacher.fullName}
                 capacity={item.capacity}
-                price={item.price}
+                price={item.cost}
               />
             );
           })}
