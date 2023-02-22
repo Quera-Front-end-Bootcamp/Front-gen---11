@@ -37,6 +37,9 @@
   &__color__tertiary {
     background-color: $color_tertiary;
     color: $color_white;
+    &:hover {
+      background-color: rgba($color_tertiary, 0.5);
+    }
   }
   &__color__transparent {
     color: $color_white;

@@ -46,6 +46,7 @@ export const Login = () => {
         });
         const token = res.data.result.jwtToken;
         setItem("token", token);
+        setItem("cart", JSON.stringify([]));
         dispatch(
           addToken({
             token: res.data.result.jwtToken,

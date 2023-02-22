@@ -1,5 +1,19 @@
 import Button from "../../UI/Button";
+import { addCourse, getIsCourseInCart } from "../../../store/entities/cart";
+import { useDispatch, useSelector } from "react-redux";
+import { getItem, setItem } from "../../../core/storage/storage.service";
+
 const Detail = ({ data }) => {
+  const state = useSelector((state) => state);
+  const isCourseInCart = getIsCourseInCart(state, data.id);
+  const dispatch = useDispatch();
+  const addCoursetoCartHandler = () => {
+    dispatch(
+      addCourse({
+        course: { id: data.id, name: data.pName, price: data.price },
+      })
+    );
+  };
   return (
     <div className="detail-section">
       <div className="detail-section__description">
@@ -35,9 +49,19 @@ const Detail = ({ data }) => {
             <span className="card__gray-box"></span>
           </div>
           <div className="div">
-            <Button freeSize="false" color="tertiary">
-              ثبت‌نام در دوره
-            </Button>
+            {isCourseInCart ? (
+              <Button freeSize="false" color="tertiary" disabled={true}>
+                دوره به سبد خرید شما اضافه شده است.
+              </Button>
+            ) : (
+              <Button
+                freeSize="false"
+                color="tertiary"
+                onClick={addCoursetoCartHandler}
+              >
+                ثبت‌نام در دوره
+              </Button>
+            )}
           </div>
         </div>
       </div>

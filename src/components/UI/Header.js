@@ -10,10 +10,18 @@ import store from "../../store";
 import useAxios from "../../hooks/useAxios";
 import { getStudnetByIdApi } from "../../core/api";
 import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router-dom";
+import { SHOP_ROUTE } from "../../routes";
+import { getCartLength, setCart } from "../../store/entities/cart";
+
 const Header = ({ absolute }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const token = getItem("token");
-
+  const cart = JSON.parse(getItem("cart"));
+  const cartHandler = () => {
+    navigate(SHOP_ROUTE);
+  };
   const { run } = useAxios({
     url: getStudnetByIdApi + (token && jwt_decode(token)._id),
     headers: {
@@ -32,10 +40,15 @@ const Header = ({ absolute }) => {
           console.log(err);
         });
     }
+    if (cart.length !== 0) {
+      dispatch(setCart({ cart: cart }));
+    }
   }, []);
-  const tokenState = useSelector((state) => state.auth.token);
+  const state = useSelector((state) => state);
+  const cartLength = getCartLength(state);
   const logoutHandler = () => {
     removeItem("token");
+    removeItem("cart");
     store.dispatch(logout());
   };
 
@@ -61,9 +74,21 @@ const Header = ({ absolute }) => {
       </nav>
 
       <div className="header__login">
-        {tokenState ? (
+        {state.auth.token ? (
           <div className="header__login__icons">
-            <FiShoppingCart color="white" size={20} cursor="pointer" />
+            <div
+              className={`header__login__cart ${
+                cartLength ? "header__login__cart--green" : ""
+              }`}
+            >
+              {cartLength ? <span>{cartLength}</span> : <></>}
+              <FiShoppingCart
+                color="white"
+                size={20}
+                cursor="pointer"
+                onClick={cartHandler}
+              />
+            </div>
             <BiLogOut
               color="white"
               size={20}

@@ -27,7 +27,6 @@ export default function Contact() {
   const onSubmit = (data) => {
     run(data)
       .then((res) => {
-        console.log(res.data.message[0].message);
         setAlertState({
           show: true,
           message: res.data?.message?.[0]?.message,
