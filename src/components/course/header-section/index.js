@@ -8,12 +8,18 @@ import Like from "../../../assets/images/like.svg";
 import Star from "../../../assets/images/star.svg";
 
 const CourseHeader = ({ data }) => {
+  const start = new Date(data.startDate);
+  const end = new Date(data.endDate);
   return (
     <div className="course-header">
       <Header />
 
       <div className="course-header__information">
-        <img className="course-header__icon" src={data.img} alt={data.name} />
+        <img
+          className="course-header__icon"
+          src={data.image}
+          alt={data.title}
+        />
         <h1 className="course-header__title">دوره {data.pName}</h1>
 
         <div className="course-header__des">
@@ -34,7 +40,7 @@ const CourseHeader = ({ data }) => {
                 alt="capacity"
               />
               <h4>دانشجو :</h4>
-              <span>{data.student} نفر</span>
+              <span>{data.students.length} نفر</span>
             </div>
           </div>
 
@@ -57,7 +63,7 @@ const CourseHeader = ({ data }) => {
             alt="teacher"
           />
           <h3>مدرس :</h3>
-          <span>{data.teacher}</span>
+          <span>{data.teacher.fullName}</span>
         </div>
         <div className="course-header__about__box">
           <img
@@ -67,12 +73,16 @@ const CourseHeader = ({ data }) => {
           />
           <div className="course-header__about__box__calendar">
             <h3>تاریخ شروع :</h3>
-            <span>{data.start.toLocaleString("fa-IR")}</span>
+            <span>{`${start.getFullYear()}/${
+              start.getMonth() + 1
+            }/${start.getDay()}`}</span>
           </div>
 
           <div className="course-header__about__box__calendar">
             <h3>تاریخ پایان :</h3>
-            <span>{data.end.toLocaleString("fa-IR")}</span>
+            <span>{`${end.getFullYear()}/${
+              end.getMonth() + 1
+            }/${end.getDay()}`}</span>
           </div>
         </div>
         <div className="course-header__about__box">

@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { COURSE_ROUTE } from "../../routes";
 import Button from "../UI/Button";
 const CourseModal = ({ setModal, course }) => {
+  const start = new Date(course.startDate);
+  const end = new Date(course.endDate);
   const details = [
     {
       id: 0,
       title: "مدرس",
-      value: course.teacher,
+      value: course.teacher.fullName,
     },
     {
       id: 1,
@@ -17,17 +19,17 @@ const CourseModal = ({ setModal, course }) => {
     {
       id: 2,
       title: "تاریخ شروع",
-      value: course.start.toLocaleString("fa-IR"),
+      value: `${start.getFullYear()}/${start.getMonth() + 1}/${start.getDay()}`,
     },
     {
       id: 3,
       title: "تاریخ پایان",
-      value: course.end.toLocaleString("fa-IR"),
+      value: `${end.getFullYear()}/${end.getMonth() + 1}/${end.getDay()}`,
     },
     {
       id: 4,
       title: "قیمت",
-      value: `${course.price} تومان`,
+      value: `${course.cost} تومان`,
       color: true,
     },
   ];
@@ -66,7 +68,7 @@ const CourseModal = ({ setModal, course }) => {
         </div>
         <div className="modal__button">
           <Button color="gray">
-            <Link to={`${COURSE_ROUTE}/${course.id}`} state={{ data: course }}>
+            <Link to={`${COURSE_ROUTE}/${course._id}`} state={{ data: course }}>
               مشاهده دوره
             </Link>
           </Button>
