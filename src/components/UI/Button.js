@@ -5,6 +5,7 @@ const Button = ({
   children,
   textSize = "normal",
   onClick,
+  type,
   disabled 
 }) => {
   return (
@@ -14,6 +15,7 @@ const Button = ({
       } btn__size__${textSize}`}
       onClick={() => onClick && onClick()}
       disabled={disabled}
+      type={type}
     >
       {children}
     </button>
