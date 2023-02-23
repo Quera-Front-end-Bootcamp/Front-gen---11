@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 function CommentSection() {
   const {
     register,
-    handleSubmit,
     formState: { isValid, errors },
   } = useForm({
     mode: "onChange",
