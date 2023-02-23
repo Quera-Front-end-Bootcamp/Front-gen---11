@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Comment from "./comment";
 import Button from "../UI/Button";
+import { useForm } from "react-hook-form";
 function CommentSection() {
+  const {
+    register,
+    handleSubmit,
+    formState: { isValid, errors },
+  } = useForm({
+    mode: "onChange",
+    reValidateMode: "onChange",
+  });
   const [comments, setComments] = useState([]);
   const formData = [
     {
@@ -23,6 +32,8 @@ function CommentSection() {
       label: "ایمیل :",
       placeHolder: "لطفا ایمیل خود را وارد کنید ...",
       className: null,
+      regexPatern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i,
+      errorMessage: "لطفا ایمل خود را به درستی وارد کنید",
     },
     {
       id: 3,
@@ -43,7 +54,7 @@ function CommentSection() {
       });
   }, []);
 
-  function handleSubmit(event) {
+  function submitHandler(event) {
     event.preventDefault();
     const data = {
       postId: "123fsfdfsafrt7",
@@ -68,32 +79,68 @@ function CommentSection() {
         setComments((prevComments) => [...prevComments, res]);
       });
   }
-
   const commentElements = comments.map((comment, index) => {
     return (
       <Comment key={index} author={comment.username} text={comment.comment} />
     );
   });
-
   return (
     <div className="comment-section">
       <h2>نظرات</h2>
       <div className="comment-list">{commentElements}</div>
-      <form onSubmit={handleSubmit} className="comment-form">
+      <form onSubmit={submitHandler} className="comment-form">
         <h3>لطفا یک نظر ایجاد کنید </h3>
         {formData.map((item) => {
           return (
-            <div className="form-group">
+            <div key={item.id} className="form-group">
               <label htmlFor={item.formID}>{item.label}</label>
               {item.type !== "textarea" ? (
-                <input type={item.type} id={item.formID} name={item.formID} placeholder={item.placeHolder} />
+                <>
+                  <input
+                    type={item.type}
+                    id={item.formID}
+                    name={item.formID}
+                    placeholder={item.placeHolder}
+                    {...register(item.name, {
+                      required: {
+                        value: true,
+                        message: "لطفا فیلد را وارد کنید !"
+                      },
+                      pattern: {
+                        value: item.regexPatern,
+                        message: item.errorMessage,
+                      },
+                    })}
+                  />
+                  <p className="errorP">{errors[item.name] && errors[item.name].message}</p>
+                </>
               ) : (
-                <textarea id={item.formID} name={item.formID}></textarea>
+                <>
+                  <textarea
+                    id={item.formID}
+                    name={item.formID}
+                    {...register(item.name, {
+                      required: {
+                        value: true,
+                        message: "لطفا فیلد را وارد کنید !"
+                      },
+                      maxLength: {
+                        value: 150,
+                        message: "تعداد کاراکتر ها باید کمتر از 150 باشد !"
+                      },
+                      minLength: {
+                        value: 10,
+                        message: "تعداد کاراکتر ها باید بیشتر از 10 باشد !"
+                      }
+                    })}
+                  ></textarea>
+                  <p className="errorP">{errors[item.name] && errors[item.name].message}</p>
+                </>
               )}
             </div>
           );
         })}
-        <Button color="main" type="submit">
+        <Button color="main" type="submit" disabled={!isValid}>
           ارسال
         </Button>
       </form>
