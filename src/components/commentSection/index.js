@@ -2,13 +2,20 @@ import React, { useState, useEffect } from "react";
 import Comment from "./comment";
 import Button from "../UI/Button";
 import { useForm } from "react-hook-form";
+import useAxios from "../../hooks/useAxios";
+import * as api from "../../core/api";
 function CommentSection() {
   const {
     register,
+    reset,
     formState: { isValid, errors },
   } = useForm({
     mode: "onChange",
     reValidateMode: "onChange",
+  });
+  const { updateLoading, run } = useAxios({
+    method: "post",
+    url: api.sendComment,
   });
   const [comments, setComments] = useState([]);
   const formData = [
@@ -61,22 +68,11 @@ function CommentSection() {
       email: event.target[1].value,
       comment: event.target[2].value,
     };
-    fetch("http://localhost:5000/api/comments/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "User-Agent": "PostmanRuntime/7.31.0",
-        Accept: "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-      },
-      body: JSON.stringify(data),
+    run(data)
+    .then(res => {
+      setComments((prevComments) => [...prevComments, res.data]);
+      reset();
     })
-      .then((response) => response.json())
-      .then((res) => {
-        console.log(res);
-        setComments((prevComments) => [...prevComments, res]);
-      });
   }
   const commentElements = comments.map((comment, index) => {
     return (
@@ -140,7 +136,7 @@ function CommentSection() {
           );
         })}
         <Button color="main" type="submit" disabled={!isValid}>
-          ارسال
+          {updateLoading ? <div className="loader"></div> : "ارسال"}
         </Button>
       </form>
     </div>
