@@ -53,6 +53,11 @@ $color-input-text: #0cdbab;
   }
   &__button {
     align-self: flex-end;
+    & .btn {
+      @include response(sm) {
+        font-size: larger;
+      }
+    }
   }
 }
 

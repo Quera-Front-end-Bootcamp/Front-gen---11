@@ -7,9 +7,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-import img1 from "../../../imgs/slider-imgs/home-slider-img-1.jpg";
-import img2 from "../../../imgs/slider-imgs/home-slider-img-2.jpg";
-import img3 from "../../../imgs/slider-imgs/home-slider-img-3.jpg";
+import img1 from "../../../assets/images/slider-imgs/home-slider-img-1.jpg";
+import img2 from "../../../assets/images/slider-imgs/home-slider-img-2.jpg";
+import img3 from "../../../assets/images/slider-imgs/home-slider-img-3.jpg";
 
 // --------------------------
 function BlogSection() {

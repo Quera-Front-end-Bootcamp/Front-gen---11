@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import Header from "../../../components/UI/Header";
-import Capacity from "../../../images/capacity.svg";
-import Student from "../../../images/student.svg";
-import Teacher from "../../../images/teacher.svg";
-import Calendar from "../../../images/calendar.svg";
-import Like from "../../../images/like.svg";
-import Star from "../../../images/star.svg";
-import { course_data } from "../../../data/course-data";
-import { useParams } from "react-router";
+import Capacity from "../../../assets/images/capacity.svg";
+import Student from "../../../assets/images/student.svg";
+import Teacher from "../../../assets/images/teacher.svg";
+import Calendar from "../../../assets/images/calendar.svg";
+import Like from "../../../assets/images/like.svg";
+import Star from "../../../assets/images/star.svg";
+
 const CourseHeader = ({ data }) => {
   return (
     <div className="course-header">

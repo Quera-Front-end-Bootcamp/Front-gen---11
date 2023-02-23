@@ -1,23 +1,23 @@
-import React from "../../images/courses-banner/react-logo.png";
-import sass from "../../images/courses-banner/saas-logo.png";
-import angular from "../../images/courses-banner/angular-logo.png";
-import python from "../../images/courses-banner/Python-logo.png";
-import javascript from "../../images/courses-banner/JavaScript-logo.png";
-import bootstarp from "./../../images/courses-banner/bootstrap-logo.png";
-import java from "./../../images/courses-banner/java-logo.png";
-import csharp from "./../../images/courses-banner/c-sharp-logo.png";
-import learn from "../../images/learn.svg";
-import online from "../../images/online-learning.svg";
-import success from "../../images/success.svg";
+import React from "../../assets/images/courses-banner/react-logo.png";
+import sass from "../../assets/images/courses-banner/saas-logo.png";
+import angular from "../../assets/images/courses-banner/angular-logo.png";
+import python from "../../assets/images/courses-banner/Python-logo.png";
+import javascript from "../../assets/images/courses-banner/JavaScript-logo.png";
+import bootstarp from "./../../assets/images/courses-banner/bootstrap-logo.png";
+import java from "./../../assets/images/courses-banner/java-logo.png";
+import csharp from "./../../assets/images/courses-banner/c-sharp-logo.png";
+import learn from "../../assets/images/learn.svg";
+import online from "../../assets/images/online-learning.svg";
+import success from "../../assets/images/success.svg";
 // this pics are for banner in courses page :
-import React_b from "../../images/courses-banner/React.png";
-import flex_grid from "../../images/courses-banner/flex-grid.png";
-import freelancering from "../../images/courses-banner/freelancering.png";
-import git from "../../images/courses-banner/git.png";
-import html from "../../images/courses-banner/html-css.png";
-import javascript_b from "../../images/courses-banner/javascript.png";
-import tailwind from "../../images/courses-banner/tailwindCss.png";
-import vs_code from "../../images/courses-banner/vs-code.png";
+import React_b from "../../assets/images/courses-banner/React.png";
+import flex_grid from "../../assets/images/courses-banner/flex-grid.png";
+import freelancering from "../../assets/images/courses-banner/freelancering.png";
+import git from "../../assets/images/courses-banner/git.png";
+import html from "../../assets/images/courses-banner/html-css.png";
+import javascript_b from "../../assets/images/courses-banner/javascript.png";
+import tailwind from "../../assets/images/courses-banner/tailwindCss.png";
+import vs_code from "../../assets/images/courses-banner/vs-code.png";
 
 export const course_data = [
   {

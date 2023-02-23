@@ -38,6 +38,12 @@
 
   &__login {
     display: flex;
+    &__icons{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
   &__menu {
     width: 2.4rem;

@@ -2,7 +2,7 @@ import React from "react";
 import CourseList from "../../components/courses/CourseList";
 import FooterSection from "../../components/footer";
 import Header from "../../components/UI/Header";
-import magnifying from "../../images/magnifying.svg";
+import magnifying from "../../assets/images/magnifying.svg";
 const Courses = () => {
   return (
     <>

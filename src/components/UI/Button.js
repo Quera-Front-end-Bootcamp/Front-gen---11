@@ -5,6 +5,8 @@ const Button = ({
   children,
   textSize = "normal",
   onClick,
+  type,
+  disabled 
 }) => {
   return (
     <button
@@ -12,6 +14,8 @@ const Button = ({
         opacity && "btn__opacity__" + color
       } btn__size__${textSize}`}
       onClick={() => onClick && onClick()}
+      disabled={disabled}
+      type={type}
     >
       {children}
     </button>

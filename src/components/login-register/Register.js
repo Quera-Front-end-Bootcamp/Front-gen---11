@@ -1,31 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
-import telegram from "./../../imgs/telegram.svg";
-import whatsapp from "./../../imgs/whatsapp.svg";
-import home from "./../../imgs/home.svg";
-import instagram from "./../../imgs/instagram.svg";
-import youtube from "./../../imgs/youtube.svg";
-import logo from "./../../imgs/logo.svg";
+import telegram from "./../../assets/images/telegram.svg";
+import whatsapp from "./../../assets/images/whatsapp.svg";
+import home from "./../../assets/images/home.svg";
+import instagram from "./../../assets/images/instagram.svg";
+import youtube from "./../../assets/images/youtube.svg";
+import logo from "./../../assets/images/logo.svg";
+import useAxios from "../../hooks/useAxios";
+import * as api from "../../core/api";
+import * as routes from "../../routes";
+import { useNavigate } from "react-router-dom";
+import Alert from "../UI/Alert";
 export const Register = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
-  const onSubmit = (data) => {
-    console.log(data);
+  const [alertState, setAlertState] = useState({
+    show: false,
+    message: "",
+    success: null,
+  });
+  const navigate = useNavigate();
+  const { updateLoading, run } = useAxios({
+    method: "post",
+    url: api.registerApi,
+  });
+
+  const onSubmit = (e) => {
+    run({ ...e, profile: "image.png" })
+      .then((res) => {
+        setAlertState({
+          show: true,
+          message: "ثبت نام با موفقیت انجام شد",
+          success: true,
+        });
+        setTimeout(() => {
+          setAlertState({
+            ...alertState,
+            show: false,
+            success: null,
+          });
+          navigate(routes.LOGIN_ROUTE);
+        }, 3000);
+      })
+
+      .catch((error) => {
+        setAlertState(() => ({
+          ...alertState,
+          show: true,
+          message: error.response?.data?.message?.[0]?.message,
+          success: false,
+        }));
+        setTimeout(() => {
+          setAlertState({
+            ...alertState,
+            show: false,
+            success: null,
+          });
+        }, 3000);
+      });
   };
+
   const formData = [
     {
       id: 0,
       type: "text",
-      name: "name",
+      name: "fullName",
       placeholder: "نام کاربری :",
       messageRequired: "لطفا نام کاربری خود را وارد کنید.",
-
+      minLength: 3,
       required: true,
+      messageLength: "تعداد کاراکتر های نام کاربری نمی تواند کمتر از 3 باشد.",
     },
     {
       id: 1,
@@ -40,7 +89,7 @@ export const Register = () => {
     {
       id: 2,
       type: "number",
-      name: "phone",
+      name: "phoneNumber",
       placeholder: "شماره موبایل:",
       required: true,
       pattern: /^(\+98|0)?9\d{9}$/,
@@ -50,7 +99,7 @@ export const Register = () => {
     {
       id: 3,
       type: "number",
-      name: "identification",
+      name: "nationalId",
       placeholder: "شماره ملی:",
       pattern: /^[0-9]{10}$/,
       required: true,
@@ -60,7 +109,7 @@ export const Register = () => {
     {
       id: 4,
       type: "date",
-      name: "data",
+      name: "birthDate",
       placeholder: "تاریخ تولد:",
       required: true,
       messageRequired: "لطفا تاریخ تولد خود را وارد کنید.",
@@ -70,13 +119,12 @@ export const Register = () => {
       type: "password",
       name: "password",
       placeholder: "رمز عبور:",
-      minLength: 6,
+      minLength: 8,
       required: true,
       messageRequired: "لطفا رمز عبور خود را وارد کنید.",
-      messageLength: "تعداد کاراکتر های رمز عبور نمی تواند کمتر از 6 باشد.",
+      messageLength: "تعداد کاراکتر های رمز عبور نمی تواند کمتر از 8 باشد.",
     },
   ];
-
   return (
     <section className="register">
       {/* image section */}
@@ -109,6 +157,9 @@ export const Register = () => {
       </div>
       {/* form section */}
       <div className="register__form">
+        {alertState.show && (
+          <Alert success={alertState.success}>{alertState.message}</Alert>
+        )}
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="register__form--container"
@@ -144,13 +195,13 @@ export const Register = () => {
           ))}
 
           <div className="register__form__btn--container">
-            <Button color="secondary" freeSize="true">
+            <Button color="secondary" freeSize={false}>
               <Link to="/login" className="link link--secondary btn__link">
                 ورود
               </Link>
             </Button>
-            <Button color="main" freeSize="true">
-              ثبت نام
+            <Button color="main" freeSize={false} disabled={!isValid}>
+              {updateLoading ? <div className="loader"></div> : "ثبت نام"}
             </Button>
           </div>
         </form>

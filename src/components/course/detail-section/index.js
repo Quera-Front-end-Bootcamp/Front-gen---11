@@ -1,4 +1,3 @@
-import logo from "../../../images/js-logo.svg";
 import Button from "../../UI/Button";
 const Detail = ({ data }) => {
   return (

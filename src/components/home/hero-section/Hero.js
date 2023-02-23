@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import magnifying from "../../../images/magnifying.svg";
+import magnifying from "../../../assets/images/magnifying.svg";
 import Button from "../../UI/Button";
 
 

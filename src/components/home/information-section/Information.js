@@ -1,7 +1,7 @@
 import React from "react";
-import student from "../../../images/student.svg";
-import teacher from "../../../images/teacher.svg";
-import course from "../../../images/course.svg";
+import student from "../../../assets/images/student.svg";
+import teacher from "../../../assets/images/teacher.svg";
+import course from "../../../assets/images/course.svg";
 const Information = () => {
   return (
     <section className="information">

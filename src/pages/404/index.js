@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/UI/Button";
-import gif from "../../gifs/sheep.gif";
+import gif from "../../assets/gifs/sheep.gif";
 const NotFound = () => {
   return (
     <div className="container">

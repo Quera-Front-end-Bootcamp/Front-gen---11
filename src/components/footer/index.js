@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Button from "./../UI/Button";
-import whatsappImage from "./../../imgs/whatsapp.svg";
-import telegramImage from "./../../imgs/telegram.svg";
-import youtubeImage from "./../../imgs/youtube.svg";
-import instagramImage from "./../../imgs/instagram.svg";
-import etehadieh from "./../../images/etehadieh.jpg";
-import enamd from "./../../images/e-namad.jpg";
-import resane from "./../../images/resaneh-digital.jpg";
+import whatsappImage from "./../../assets/images/whatsapp.svg";
+import telegramImage from "./../../assets/images/telegram.svg";
+import youtubeImage from "./../../assets/images/youtube.svg";
+import instagramImage from "./../../assets/images/instagram.svg";
+import etehadieh from "./../../assets/images/etehadieh.jpg";
+import enamd from "./../../assets/images/e-namad.jpg";
+import resane from "./../../assets/images/resaneh-digital.jpg";
 function FooterSection() {
   const [input, setInput] = useState({});
 

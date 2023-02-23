@@ -1,6 +1,6 @@
-import collaboration from "../../../images/collaboration.jpg";
-import student from "../../../images/student.jpg";
-import consultation from "../../../images/consultation.jpg";
+import collaboration from "../../../assets/images/collaboration.jpg";
+import student from "../../../assets/images/student.jpg";
+import consultation from "../../../assets/images/consultation.jpg";
 
 import Advise from "./Advise.js";
 import Button from "../../UI/Button";

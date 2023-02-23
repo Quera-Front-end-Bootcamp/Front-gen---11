@@ -4,6 +4,7 @@ import Advantage from "../../components/course/advantage-section";
 import Detail from "../../components/course/detail-section";
 import { useParams } from "react-router-dom";
 import { course_data } from "../../data/course-data";
+import CommentSection from "../../components/commentSection";
 const Course = () => {
   // const data = location.state.data;
   const { id } = useParams();
@@ -13,6 +14,7 @@ const Course = () => {
       <CourseHeader data={data} />
       <Detail data={data} />
       <Advantage data={data} />
+      <CommentSection/>
     </main>
   );
 };
