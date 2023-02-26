@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { course_data } from "../../data/course-data";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCourses } from "../../store/course";
+import CommentSection from "../../components/commentSection";
 const Course = () => {
   // const data = location.state.data;
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Course = () => {
       <CourseHeader data={data} />
       <Detail data={data} />
       <Advantage data={data} />
+      <CommentSection/>
     </main>
   );
 };
