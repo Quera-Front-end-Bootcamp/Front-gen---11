@@ -32,7 +32,7 @@ function CourseCard(props) {
         </div>
         <div className="courses__card--price">
           <span>تومان</span>
-          {props.price}
+          {props.cost}
         </div>
         <Link
           to={`${COURSE_ROUTE}/${props.allData._id}`}

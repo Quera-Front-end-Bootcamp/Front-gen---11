@@ -4,13 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { getItem, setItem } from "../../../core/storage/storage.service";
 
 const Detail = ({ data }) => {
+  console.log(data);
   const state = useSelector((state) => state);
-  const isCourseInCart = getIsCourseInCart(state, data.id);
+  const token = state.auth.token;
+  const isCourseInCart = getIsCourseInCart(state, data._id);
   const dispatch = useDispatch();
   const addCoursetoCartHandler = () => {
     dispatch(
       addCourse({
-        course: { id: data.id, name: data.pName, price: data.price },
+        course: { _id: data._id, name: data.pName, cost: data.cost },
       })
     );
   };
@@ -52,6 +54,15 @@ const Detail = ({ data }) => {
             {isCourseInCart ? (
               <Button freeSize="false" color="tertiary" disabled={true}>
                 دوره به سبد خرید شما اضافه شده است.
+              </Button>
+            ) : !token ? (
+              <Button
+                freeSize="false"
+                color="tertiary"
+                onClick={addCoursetoCartHandler}
+                disabled={true}
+              >
+                برای ثبت‌نام وارد حساب خود شوید.{" "}
               </Button>
             ) : (
               <Button

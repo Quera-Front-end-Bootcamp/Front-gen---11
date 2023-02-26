@@ -95,7 +95,7 @@ function CourseList() {
                 topic={`${item.title} دوره`}
                 teacher={item.teacher.fullName}
                 capacity={item.capacity}
-                price={item.cost}
+                cost={item.cost}
               />
             );
           })}

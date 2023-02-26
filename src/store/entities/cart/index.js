@@ -12,7 +12,7 @@ const slice = createSlice({
     },
     removeCourse: (state, action) => {
       const cart = state.filter(
-        (course) => course.id !== action.payload.courseId
+        (course) => course._id !== action.payload.courseId
       );
       setItem("cart", JSON.stringify(cart));
       return cart;
@@ -34,9 +34,11 @@ export const getCartLength = (state) => {
 };
 
 export const getCartTotalPrice = (state) => {
-  return state.entities.cart.reduce((prev, curr) => (prev += curr.price), 0);
+  return state.entities.cart.reduce((prev, curr) => (prev += curr.cost), 0);
 };
 
 export const getIsCourseInCart = (state, id) => {
-  return state.entities.cart.some((course) => course.id === id);
+  console.log(state);
+  console.log(state.entities.cart.some((course) => course._id === id));
+  return state.entities.cart.some((course) => course._id === id);
 };

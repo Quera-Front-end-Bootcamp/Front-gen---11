@@ -11,19 +11,8 @@ const Course = () => {
   const dispatch = useDispatch();
   const { courses, loading } = useSelector((store) => store.course);
   const { id } = useParams();
-  useEffect(() => {
-    fetchCourses();
-  }, []);
-
-  const fetchCourses = async () => {
-    try {
-      const res = dispatch(getAllCourses());
-    } catch (err) {
-      throw new err();
-    }
-  };
-  console.log(courses.find((c) => c._id === id));
   let data = courses.find((c) => c._id === id);
+
   return (
     <main>
       <CourseHeader data={data} />

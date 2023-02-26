@@ -17,8 +17,7 @@ export const courseSlice = createSlice({
   initialState: { loading: false, courses: [], course: {} },
   reducers: {
     findCourseById: (state, action) => {
-      console.log(state.courses);
-      state.course = state.courses.find((c) => c.id === action.payload.id);
+      state.course = state.courses.find((c) => c._id === action.payload.id);
     },
   },
   extraReducers: {

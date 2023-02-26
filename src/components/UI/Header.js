@@ -12,7 +12,7 @@ import { getStudnetByIdApi } from "../../core/api";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { SHOP_ROUTE } from "../../routes";
-import { getCartLength, setCart } from "../../store/entities/cart";
+import { getCartLength, setCart,emptyCart } from "../../store/entities/cart";
 
 const Header = ({ absolute }) => {
   const dispatch = useDispatch();
@@ -40,7 +40,10 @@ const Header = ({ absolute }) => {
           console.log(err);
         });
     }
-    if (cart.length !== 0) {
+    if (!Array.isArray(cart)) {
+      dispatch(emptyCart());
+    }
+    else if (cart.length !== 0) {
       dispatch(setCart({ cart: cart }));
     }
   }, []);

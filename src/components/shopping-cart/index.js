@@ -28,12 +28,12 @@ function ShoppingCart() {
           {" "}
           <ul className="shopping-cart__items">
             {state.entities.cart.map((course) => (
-              <li className="shopping-cart__item" key={course.id}>
-                <span>{`${course.name}:  ${course.price}تومان`}</span>
+              <li className="shopping-cart__item" key={course._id}>
+                <span>{`${course.name}:  ${course.cost}تومان`}</span>
                 <MdRemoveCircleOutline
                   cursor="pointer"
                   onClick={() => {
-                    removeHandler(course.id);
+                    removeHandler(course._id);
                   }}
                 />
               </li>

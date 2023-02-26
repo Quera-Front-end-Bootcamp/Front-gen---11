@@ -18,17 +18,6 @@ const Courses = () => {
     // console.log(course);
   };
 
-  useEffect(() => {
-    fetchCourses();
-  }, []);
-
-  const fetchCourses = async () => {
-    try {
-      const res = dispatch(getAllCourses());
-    } catch (err) {
-      throw new err();
-    }
-  };
 
   return (
     <>
