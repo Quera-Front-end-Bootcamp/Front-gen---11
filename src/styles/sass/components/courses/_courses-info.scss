@@ -19,8 +19,8 @@
     margin: 8rem auto;
   }
   @include response(sm) {
-    margin: 3.2rem;
-    height: 30rem;
+    margin: 6rem auto;
+    height: 60rem;
     align-self: center;
   }
   &__cart {
@@ -35,7 +35,7 @@
       }
       @include response(sm) {
         width: 55%;
-        height: 55%;
+        height: 50%;
       }
       top: -$percantage * 1%;
       left: -$percantage * 1%;
@@ -50,7 +50,7 @@
       }
       @include response(sm) {
         width: 50%;
-        height: 50%;
+        height: 55%;
       }
       bottom: -$percantage * 1%;
       left: -$percantage * 1%;
