@@ -13,11 +13,18 @@ const Courses = () => {
   const clickHandler = (id) => {
     setShowModal(true);
     setId(id);
-    // dispatch(findCourseById({ id }));
-    // console.log(id);
-    // console.log(course);
   };
+  useEffect(() => {
+    fetchCourses();
+  }, []);
 
+  const fetchCourses = async () => {
+    try {
+      const res = dispatch(getAllCourses());
+    } catch (err) {
+      throw new err();
+    }
+  };
 
   return (
     <>
