@@ -4,10 +4,11 @@ import CourseCart from "./CourseCart";
 import CourseModal from "./../../course-modal";
 import { course_data } from "../../../data/course-data";
 import { useSelector, useDispatch } from "react-redux";
-import { findCourseById, getAllCourses } from "../../../store/course";
+import jsPic from "./../../../assets/images/courses-banner/JavaScript-logo.png";
+import { getAllCourses } from "../../../store/course";
 const Courses = () => {
   const dispatch = useDispatch();
-  const { loading, courses, course } = useSelector((store) => store.course);
+  const { loading, courses } = useSelector((store) => store.course);
   const [showModal, setShowModal] = useState(false);
   const [id, setId] = useState("");
   const clickHandler = (id) => {
@@ -18,6 +19,7 @@ const Courses = () => {
     fetchCourses();
   }, []);
 
+  console.log(courses);
   const fetchCourses = async () => {
     try {
       const res = dispatch(getAllCourses());
@@ -35,7 +37,7 @@ const Courses = () => {
             key={course._id}
           >
             <CourseCart
-              img={`.${course.image}`}
+              img={jsPic}
               color={course.color}
               buttonText={course.pName}
               alt={course.name}

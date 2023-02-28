@@ -14,7 +14,7 @@ export const getAllCourses = createAsyncThunk(
 const allCourses = (res) => res.payload.result;
 export const courseSlice = createSlice({
   name: "course",
-  initialState: { loading: false, courses: [], course: {} },
+  initialState: { loading: false, courses: [] },
   reducers: {
     findCourseById: (state, action) => {
       state.course = state.courses.find((c) => c._id === action.payload.id);
@@ -33,5 +33,4 @@ export const courseSlice = createSlice({
     },
   },
 });
-export const { findCourseById } = courseSlice.actions;
 export default courseSlice.reducer;

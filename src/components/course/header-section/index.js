@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import Header from "../../../components/UI/Header";
 import Capacity from "../../../assets/images/capacity.svg";
 import Student from "../../../assets/images/student.svg";
-import Teacher from "../../../assets/images/teacher.svg";
+import Teacher from "./../../../assets/images/teacher.svg";
 import Calendar from "../../../assets/images/calendar.svg";
 import Like from "../../../assets/images/like.svg";
 import Star from "../../../assets/images/star.svg";
-
+import jsPic from "./../../../assets/images/courses-banner/JavaScript-logo.png";
 const CourseHeader = ({ data }) => {
   const start = new Date(data.startDate);
   const end = new Date(data.endDate);
@@ -15,11 +15,7 @@ const CourseHeader = ({ data }) => {
       <Header />
 
       <div className="course-header__information">
-        <img
-          className="course-header__icon"
-          src={data.image}
-          alt={data.title}
-        />
+        <img className="course-header__icon" src={jsPic} alt={data.title} />
         <h1 className="course-header__title">دوره {data.pName}</h1>
 
         <div className="course-header__des">

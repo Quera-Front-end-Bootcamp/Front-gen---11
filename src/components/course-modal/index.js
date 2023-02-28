@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { COURSE_ROUTE } from "../../routes";
 import Button from "../UI/Button";
+import jsPic from "./../../assets/images/courses-banner/JavaScript-logo.png";
+
 const CourseModal = ({ setModal, course }) => {
   const start = new Date(course.startDate);
   const end = new Date(course.endDate);
@@ -40,7 +42,7 @@ const CourseModal = ({ setModal, course }) => {
       <div className="modal">
         <div className="modal__information">
           <img
-            src={course.img}
+            src={jsPic}
             alt={course.name}
             className="modal__information__image"
           />

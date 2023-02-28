@@ -2,6 +2,7 @@ import Button from "../../UI/Button";
 import { addCourse, getIsCourseInCart } from "../../../store/entities/cart";
 import { useDispatch, useSelector } from "react-redux";
 import { getItem, setItem } from "../../../core/storage/storage.service";
+import jsPic from "./../../../assets/images/courses-banner/JavaScript-logo.png";
 
 const Detail = ({ data }) => {
   console.log(data);
@@ -24,7 +25,7 @@ const Detail = ({ data }) => {
       </div>
       <div className="card">
         <div className="card__header">
-          <img src={data.imagg} alt={data.title} className="card__logo" />
+          <img src={jsPic} alt={data.title} className="card__logo" />
           <h3 className="card__heading">دوره {data.pName}</h3>
         </div>
         <div className="card__body">

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import CourseModal from "../../course-modal";
+import jsPic from "./../../../assets/images/courses-banner/JavaScript-logo.png";
+
 import { COURSE_ROUTE } from "../../../routes";
 function CourseCard(props) {
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +14,7 @@ function CourseCard(props) {
     <>
       <div className="courses__card">
         <div className="courses__card--img">
-          <img src={props.img} alt={props.alt} />
+          <img src={jsPic} alt={props.alt} />
         </div>
         <div className="courses__card--topic">
           <h3>{props.topic}</h3>
